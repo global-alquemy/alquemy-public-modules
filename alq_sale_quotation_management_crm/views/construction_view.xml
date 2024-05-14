@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="construction_construction_menu"
+              name="Constructions"
+              action="alq_construction_base.construction_construction_action"
+              parent="crm.crm_menu_sales"
+              sequence="100"/>
+
+</odoo>

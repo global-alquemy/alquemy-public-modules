@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="sqtd_default" model="sale.quotation.template.discount">
+            <field name="code">0</field>
+            <field name="default_discount" eval="True"/>
+            <field name="discount">0.0</field>
+            <field name="name">0 %</field>
+        </record>
+
+    </data>
+</odoo>

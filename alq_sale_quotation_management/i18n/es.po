@@ -1,0 +1,2627 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alq_sale_quotation_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-08 12:30+0000\n"
+"PO-Revision-Date: 2024-05-08 12:30+0000\n"
+"Last-Translator: Carlos Sánchez Cifuentes <csanchez@alquemy.es>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation_template.py:0
+#, python-format
+msgid "(copy)"
+msgstr "(copia)"
+
+#. module: alq_sale_quotation_management
+#: model:mail.template,body_html:alq_sale_quotation_management.alq_sale_quotation_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"                        <span>Hello</span>\n"
+"                        <strong t-out=\"object.partner_id.name or ''\"/>\n"
+"                        <span>,</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Your sale quotation</span>\n"
+"                        <strong t-out=\"object.name or ''\"/>\n"
+"                        <span>.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Do not hesitate to contact us if you have any questions.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Regards.</span>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"                        <span>Hola</span>\n"
+"                        <strong t-out=\"object.partner_id.name or ''\"/>\n"
+"                        <span>,</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Su presupuesto</span>\n"
+"                        <strong t-out=\"object.name or ''\"/>\n"
+"                        <span>.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>No dude en ponerse en contacto con nosotros si tiene alguna pregunta.</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span>Saludos.</span>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"<span attrs=\"{'invisible': [('measure', '!=', 'linear')]}\">m/day</span>\n"
+"                                                <span attrs=\"{'invisible': [('measure', '!=', 'square')]}\">m²/day</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('measure', '!=', 'linear')]}\">m/day</span>\n"
+"                                                <span attrs=\"{'invisible': [('measure', '!=', 'square')]}\">m²/day</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"<span attrs=\"{'invisible': [('measure', '!=', 'linear')]}\">m/day</span>\n"
+"                                <span attrs=\"{'invisible': [('measure', '!=', 'square')]}\">m²/day</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('measure', '!=', 'linear')]}\">m/day</span>\n"
+"                                <span attrs=\"{'invisible': [('measure', '!=', 'square')]}\">m²/day</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid ""
+"<span attrs=\"{'invisible': [('show_user_commission', '=', "
+"False)]}\">%</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('show_user_commission', '=', "
+"False)]}\">%</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"<span attrs=\"{'invisible': [('thickness_measure', '!=', 'cm')]}\">cm</span>\n"
+"                                                <span attrs=\"{'invisible': [('thickness_measure', '!=', 'mm')]}\">mm</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('thickness_measure', '!=', 'cm')]}\">cm</span>\n"
+"                                                <span attrs=\"{'invisible': [('thickness_measure', '!=', 'mm')]}\">mm</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"<span attrs=\"{'invisible': [('thickness_measure', '!=', 'cm')]}\">cm</span>\n"
+"                                <span attrs=\"{'invisible': [('thickness_measure', '!=', 'mm')]}\">mm</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('thickness_measure', '!=', 'cm')]}\">cm</span>\n"
+"                                <span attrs=\"{'invisible': [('thickness_measure', '!=', 'mm')]}\">mm</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "<span invisible=\"1\">%</span>"
+msgstr "<span invisible=\"1\">%</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "<span>kg</span>"
+msgstr "<span>kg</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "<span>m</span>"
+msgstr "<span>m</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "<span>m²</span>"
+msgstr "<span>m²</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.generate_sale_quotation_wizard_form
+msgid "<span>or</span>"
+msgstr "<span>o</span>"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "<span>€</span>"
+msgstr "<span>€</span>"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "A validated version of this quotation already exists."
+msgstr "Ya hay una versión validada de este presupuesto."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_needaction
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_exception_decoration
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad de Excepción"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_state
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_type_icon
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actvidad"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Add new line"
+msgstr "Añadir línea"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Add new section"
+msgstr "Añadir fase"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Allowed discounts"
+msgstr "Descuentos permitidos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__analytic_account_id
+msgid "Analytic account"
+msgstr "Cuenta analítica"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Are you sure to consider this quotation as done?"
+msgstr "¿Está seguro de querer aprobar este presupuesto?"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Are you sure you want to duplicate the line?"
+msgstr "¿Está seguro de querer duplicar la línea?"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+msgid "Associated commercial"
+msgstr "Comercial asociado"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "At least one of the following lines is required:"
+msgstr "Al menos una de las siguientes líneas es obligatoria:"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_attachment_count
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Back to draft"
+msgstr "Volver a borrador"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__business_line_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__business_line_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_search
+msgid "Business line"
+msgstr "Línea de negocio"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__business_line_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__business_line_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__business_line_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__business_line_ids
+msgid "Business lines"
+msgstr "Líneas de negocio"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.generate_sale_quotation_wizard_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__cancel
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__thickness_measure__cm
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_type__thickness_measure__cm
+#, python-format
+msgid "Centimeters"
+msgstr "Centímetros"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/account.py:0
+#, python-format
+msgid "Certification discount:"
+msgstr "Descuento por certificación:"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__date_status
+msgid "Change status date"
+msgstr "Fecha de último cambio de estado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_users__code
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__code
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__code
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__code
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__code
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__code
+msgid "Code"
+msgstr "Código"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__coefficient
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__coefficient
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__coefficient
+msgid "Coefficient"
+msgstr "Coeficiente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__coefficient_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__coefficient_default_value
+msgid "Coefficient default value"
+msgstr "Coeficiente por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__coefficient_delivery_weight
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__coefficient_delivery_weight
+msgid "Coefficient delivery weight"
+msgstr "Coeficiente del peso de envío específico"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__coefficient_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__coefficient_options
+msgid "Coefficient options"
+msgstr "Opciones de coeficiente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__coefficient_show_column
+msgid "Coefficient show column"
+msgstr "Mostrar columna coeficiente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__coefficient_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__coefficient_show_field
+msgid "Coefficient show field"
+msgstr "Mostrar campo coeficiente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__commercial_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Commercial"
+msgstr "Comercial"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__commercial_commission
+msgid "Commercial commission"
+msgstr "Comisión comercial"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__commission
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__commission
+msgid "Commission"
+msgstr "Comisión"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_res_partner_form_agent
+msgid "Commission (%)"
+msgstr "Comisión (%)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_res_partner_form_agent
+msgid "Commissions"
+msgstr "Comisiones"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__length_options__compute
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__surface_options__compute
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__thickness_options__compute
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__length_options__compute
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__surface_options__compute
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__thickness_options__compute
+#, python-format
+msgid "Compute"
+msgstr "Calculado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__confirmed
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Confirmed"
+msgstr "Caliente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_analytic_account__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_analytic_line__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_bank_statement_line__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_move__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_payment__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_order__construction_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__construction_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_account_analytic_line_select
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_account_invoice_select
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_sale_order_list_select
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Construction"
+msgstr "Obra"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Construction address"
+msgstr "Dirección de obra"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+msgid "Cost distributed"
+msgstr "Coste distribuido"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_template_business_action
+msgid "Create a new sale quotation template business line."
+msgstr "Cree una nueva línea de negocio."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_template_discount_action
+msgid "Create a new sale quotation template discount."
+msgstr "Cree un nuevo descuento de plantilla de presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_template_field_action
+msgid "Create a new sale quotation template field."
+msgstr "Cree un nuevo campo de plantilla de presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_template_type_action
+msgid "Create a new sale quotation template type."
+msgstr "Cree un nuevo tipo de plantilla de presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_template_action
+msgid "Create a new sale quotation template."
+msgstr "Cree una nueva plantilla de presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.actions.act_window,help:alq_sale_quotation_management.sale_quotation_action
+msgid "Create a new sale quotation."
+msgstr "Cree un nuevo presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Create new version"
+msgstr "Crear nueva versión"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__create_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__create_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__currency_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__partner_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__partner_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__days
+msgid "Days"
+msgstr "Días"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__days_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__days_default_value
+msgid "Days default value"
+msgstr "Días por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__days_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__days_options
+msgid "Days options"
+msgstr "Opciones de días"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__days_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__days_show_field
+msgid "Days show field"
+msgstr "Mostrar campo días"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__default_discount
+msgid "Default discount"
+msgstr "Descuento por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__default_product_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__default_product_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Default product"
+msgstr "Producto por defecto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+msgid "Delivery"
+msgstr "Envío"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__partner_shipping_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__partner_shipping_id
+msgid "Delivery address"
+msgstr "Dirección de obra"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__delivery_weight
+msgid "Delivery weight"
+msgstr "Peso de la entrega"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__description
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__discount_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__discount
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__discount
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__discount_id
+msgid "Discount selected"
+msgstr "Descuento seleccionado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__discount_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__discount_ids
+msgid "Discounts"
+msgstr "Descuentos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__display_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__display_name
+msgid "Display name"
+msgstr "Nombre"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__display_type
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__display_type
+msgid "Display type"
+msgstr "Tipo de visualización"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__done
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Done"
+msgstr "Aprobado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__dosage
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__dosage
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__dosage
+msgid "Dosage"
+msgstr "Dosificación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__dosage_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__dosage_default_value
+msgid "Dosage default value"
+msgstr "Dosificación por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__dosage_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__dosage_options
+msgid "Dosage options"
+msgstr "Opciones de dosificación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__dosage_show_column
+msgid "Dosage show column"
+msgstr "Mostrar columna dosificación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__dosage_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__dosage_show_field
+msgid "Dosage show field"
+msgstr "Mostrar campo dosificación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__draft
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__duplicated_line
+msgid "Duplicated line"
+msgstr "Línea duplicada"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__editable_name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__editable_name
+msgid "Editable name"
+msgstr "Concepto editable"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__efficiency
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__efficiency
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__efficiency
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__efficiency
+msgid "Efficiency"
+msgstr "Rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__efficiency_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__efficiency_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__efficiency_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__efficiency_default_value
+msgid "Efficiency default value"
+msgstr "Rendimiento por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__efficiency_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__efficiency_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__efficiency_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__efficiency_options
+msgid "Efficiency options"
+msgstr "Opciones de rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__efficiency_show_column
+msgid "Efficiency show column"
+msgstr "Mostrar columna rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__efficiency_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__efficiency_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__efficiency_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__efficiency_show_field
+msgid "Efficiency show field"
+msgstr "Mostrar campo rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__efficiency_umbral
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__efficiency_umbral
+msgid "Efficiency umbral"
+msgstr "Umbral rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__expiration_date
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Expiration date"
+msgstr "Fecha de vencimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__expiration_days
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__expiration_days
+msgid "Expiration days"
+msgstr "Días de vencimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__field_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__field_ids
+msgid "Fields"
+msgstr "Campos"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Fields options"
+msgstr "Opciones de campos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_follower_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_partner_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__activity_type_icon
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_price_distributed_editable
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_price_distributed_editable
+msgid "Formula editable: Price distributed"
+msgstr "Fórmula editable: Precio distribuido"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_price_total_editable
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_price_total_editable
+msgid "Formula editable: Price total"
+msgstr "Fórmula editable: Precio total"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula editable: Price/m"
+msgstr "Fórmula editable: Precio/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula editable: Price/m²"
+msgstr "Fórmula editable: Precio/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_quantity_editable
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_quantity_editable
+msgid "Formula editable: Quantity"
+msgstr "Fórmula editable: Cantidad"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula options"
+msgstr "Opciones de fórmulas"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_price_distributed
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_price_distributed
+msgid "Formula: Price distributed"
+msgstr "Fórmula: Precio distribuido"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_price_total
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_price_total
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula: Price total"
+msgstr "Fórmula: Precio total"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula: Price/m"
+msgstr "Fórmula: Precio/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula: Price/m²"
+msgstr "Fórmula: Precio/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__formula_quantity
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__formula_quantity
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Formula: Quantity"
+msgstr "Fórmula: Cantidad"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_generate_sale_quotation_wizard
+msgid "Generate Sale Quotation Wizard"
+msgstr "Asistente de generación de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.generate_sale_quotation_wizard_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.generate_sale_quotation_wizard_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.generate_sale_quotation_wizard_form
+msgid "Generate sale quotation"
+msgstr "Generar presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_search
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__has_message
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_days_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_days_show_field
+msgid "Header days show field"
+msgstr "Mostrar campo días de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_efficiency_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_efficiency_show_field
+msgid "Header efficiency show field"
+msgstr "Mostrar campo rendimiento de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Header fields"
+msgstr "Campos de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_length_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_length_show_field
+msgid "Header length show field"
+msgstr "Mostrar campo longitud de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_perimeter_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_perimeter_show_field
+msgid "Header perimeter show field"
+msgstr "Mostrar campo perímetro de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_surface_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_surface_show_field
+msgid "Header surface show field"
+msgstr "Mostrar campo superficie de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_thickness_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_thickness_show_field
+msgid "Header thickness show field"
+msgstr "Mostrar campo espesor de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_width_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_width_show_field
+msgid "Header width show field"
+msgstr "Mostrar campo ancho de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__header_workers_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__header_workers_show_field
+msgid "Header workers show field"
+msgstr "Mostrar campo trabajadores de cabecera"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__height
+msgid "Height"
+msgstr "Altura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__height_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__height_default_value
+msgid "Height default value"
+msgstr "Altura por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__height_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__height_options
+msgid "Height options"
+msgstr "Opciones de altura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__height_show_column
+msgid "Height show column"
+msgstr "Mostrar columna altura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__height_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__height_show_field
+msgid "Height show field"
+msgstr "Mostrar campo altura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__hide_distributed_data
+msgid "Hide distributed data"
+msgstr "Ocultar datos distribuidos"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Hide prices/m"
+msgstr "Ocultar precios/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Hide prices/m²"
+msgstr "Ocultar precios/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_exception_icon
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__activity_exception_icon
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_needaction
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_unread
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_needaction
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_has_error
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__internal_notes
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Internal notes"
+msgstr "Notas internas"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Internal notes..."
+msgstr "Notas internas..."
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__coefficient_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__dosage_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__efficiency_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__height_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__length_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__price_unit_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__surface_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__thickness_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__units_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__usage_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__width_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__coefficient_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__dosage_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__efficiency_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__height_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__length_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__price_unit_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__surface_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__thickness_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__units_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__usage_options__invisible
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__width_options__invisible
+#, python-format
+msgid "Invisible"
+msgstr "Invisible"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Invoice description"
+msgstr "Concepto a facturar"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_advance_payment_inv__inv_by_cert
+msgid "Invoicing by certifications"
+msgstr "Facturar por certificaciones"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_is_follower
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__is_reference_line
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__is_reference_line
+msgid "Is reference line"
+msgstr "Es línea de referencia"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_move_line__is_cert_line
+msgid "It's certification line"
+msgstr "Es línea de certificación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_analytic_account__is_construction
+msgid "It's construction account"
+msgstr "Es una cuenta de obra"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+msgid "Labor"
+msgstr "Mano de obra"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group____last_update
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__write_uid
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__write_date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Legend for formula operations"
+msgstr "Leyenda para operar en las fórmulas"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__length
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__length
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__length
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__length
+msgid "Length"
+msgstr "Longitud"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__length_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__length_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__length_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__length_default_value
+msgid "Length default value"
+msgstr "Longitud por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__length_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__length_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__length_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__length_options
+msgid "Length options"
+msgstr "Opciones de longitud"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__length_show_column
+msgid "Length show column"
+msgstr "Mostrar columna longitud"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__length_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__length_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__length_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__length_show_field
+msgid "Length show field"
+msgstr "Mostrar campo longitud"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__priority_price__line
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__priority_price__line
+msgid "Line"
+msgstr "Línea"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Line fields"
+msgstr "Campos de línea"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__group_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__group_id
+msgid "Line group"
+msgstr "Grupo de líneas"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__measure__linear
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_type__measure__linear
+#, python-format
+msgid "Linear meter"
+msgstr "Metro lineal"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__line_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__line_ids
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_main_attachment_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__major_dividend
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__major_dividend
+msgid "Major dividend"
+msgstr "Dividendo mayor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__margin
+msgid "Margin"
+msgstr "Margen"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+msgid "Margin (%)"
+msgstr "Margen (%)"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__margin_coefficient
+msgid "Margin coefficient"
+msgstr "Coeficiente del margen"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+msgid "Margin distributed"
+msgstr "Margen distribuido"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__margin_price
+msgid "Margin price"
+msgstr "Importe del margen"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__margin_price_distributed
+msgid "Margin price distributed"
+msgstr "Importe distribuido del margen"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Margin price/m"
+msgstr "Magen importe/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Margin price/m²"
+msgstr "Margen importe/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__max_discount
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__max_discount
+msgid "Maximum discount"
+msgstr "Descuento máximo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__measure
+msgid "Measure"
+msgstr "Medida"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_has_error
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__thickness_measure__mm
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_type__thickness_measure__mm
+#, python-format
+msgid "Millimeters"
+msgstr "Milímetros"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__min_price_unit
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__min_price_unit
+msgid "Minimum price unit"
+msgstr "Precio unitario mínimo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__minimum_workers
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__minimum_workers
+msgid "Minimum workers"
+msgstr "Mínimo de trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__minor_dividend
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__minor_dividend
+msgid "Minor dividend"
+msgstr "Dividendo menor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi fecha límite de actividad"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "My quotations"
+msgstr "Mis presupuestos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__name
+msgid "Name"
+msgstr "Concepto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__name
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#: code:addons/alq_sale_quotation_management/models/sale_quotation_template.py:0
+#: code:addons/alq_sale_quotation_management/wizard/generate_sale_quotation_wizard.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_calendar_event_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_date_deadline
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de siguiente actividad"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_summary
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_type_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__next_subsequence
+msgid "Next subsequence"
+msgstr "Siguiente subsecuencia"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__next_version
+msgid "Next version"
+msgstr "Siguiente versión"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__note
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__note
+msgid "Note"
+msgstr "Anotaciones"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_needaction_counter
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_has_error_counter
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_needaction_counter
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_has_error_counter
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__message_unread_counter
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__operating_unit_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__operating_unit_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__operating_unit_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Operating unit"
+msgstr "Delegación"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__origin
+msgid "Origin"
+msgstr "Origen"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Other information"
+msgstr "Otra información"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__perimeter
+msgid "Perimeter"
+msgstr "Perímetro"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__perimeter_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__perimeter_default_value
+msgid "Perimeter default value"
+msgstr "Perímetro por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__perimeter_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__perimeter_options
+msgid "Perimeter options"
+msgstr "Opciones de perímetro"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__perimeter_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__perimeter_show_field
+msgid "Perimeter show field"
+msgstr "Mostrar campo perímetro"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__price_distributed
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+msgid "Price distributed"
+msgstr "Precio distribuido"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Price options"
+msgstr "Opciones de precio"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__price_total
+msgid "Price total"
+msgstr "Precio total"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__price_unit
+msgid "Price unit"
+msgstr "Precio unitario"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__price_unit_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__price_unit_default_value
+msgid "Price unit default value"
+msgstr "Precio unitario por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__price_unit_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__price_unit_options
+msgid "Price unit options"
+msgstr "Opciones de precio unitario"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Price/m²"
+msgstr "Precio/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__priority_price
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__priority_price
+msgid "Priority price"
+msgstr "Precio preferente"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__product_id
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__priority_price__product
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__priority_price__product
+msgid "Product"
+msgstr "Producto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_product_template_quotation_commission
+msgid "Product Template Quotation Commission"
+msgstr "Comisión de presupuesto de plantilla de producto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__product_commission
+msgid "Product commission"
+msgstr "Comisión del producto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__sale_distributed_product_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__sale_distributed_product_id
+msgid "Product distributed for sale order lines"
+msgstr "Producto distribuido para pedido de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__product_domain
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__product_domain
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Product domain"
+msgstr "Dominio para el producto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Product fields"
+msgstr "Campos de producto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__sale_product_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__sale_product_id
+msgid "Product for sale order lines"
+msgstr "Producto para pedido de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__template_id
+msgid "Product template"
+msgstr "Plantilla de producto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_sale_order_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_sale_order_list_select
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_sale_order_tree
+msgid "Proforma"
+msgstr "Proforma"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#: code:addons/alq_sale_quotation_management/wizard/generate_sale_quotation_wizard.py:0
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__quotation_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#, python-format
+msgid "Quotation"
+msgstr "Presupuestado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__quotation
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+#, python-format
+msgid "Quotation"
+msgstr "Proyecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__quotation_template_id
+msgid "Quotation Template"
+msgstr "Plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__quotation_template_line_id
+msgid "Quotation Template Line"
+msgstr "Línea de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__quotation_commission_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__quotation_commission_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner__quotation_commission_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_users__quotation_commission_ids
+msgid "Quotation commissions"
+msgstr "Comisiones del presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+msgid "Quotation configuration"
+msgstr "Configuración de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__date
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__date
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Quotation date"
+msgstr "Fecha de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_product_template_common_form
+msgid "Quotation fields"
+msgstr "Campos de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__group_id
+msgid "Quotation group"
+msgstr "Grupo del presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__group_done
+msgid "Quotation group done"
+msgstr "Grupo del presupuesto realizado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__quotation_name
+msgid "Quotation name"
+msgstr "Nombre de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Quotation template"
+msgstr "Plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_business_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_business_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_business_tree
+msgid "Quotation template business lines"
+msgstr "Líneas de negocio de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_discount_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_discount_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_discount_tree
+msgid "Quotation template discounts"
+msgstr "Descuentos de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_field_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_field_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_field_tree
+msgid "Quotation template fields"
+msgstr "Campos de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Quotation template line"
+msgstr "Línea de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_line_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_line_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_line_tree
+msgid "Quotation template lines"
+msgstr "Líneas de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_type_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_type_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_type_tree
+msgid "Quotation template types"
+msgstr "Tipos de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_template_action
+#: model:ir.ui.menu,name:alq_sale_quotation_management.sale_quotation_template_menu
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_search
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_tree
+msgid "Quotation templates"
+msgstr "Plantillas de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale.py:0
+#: model:ir.actions.act_window,name:alq_sale_quotation_management.sale_quotation_action
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_order__quotation_ids
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.quotation_sale_order_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_tree
+#, python-format
+msgid "Quotations"
+msgstr "Presupuestos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_order__quotations_count
+msgid "Quotations count"
+msgstr "Cantidad de presupuestos"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__days_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__efficiency_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__length_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__perimeter_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__surface_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__thickness_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__width_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__workers_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__coefficient_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__dosage_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__efficiency_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__height_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__length_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__price_unit_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__surface_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__thickness_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__units_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__usage_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__width_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__days_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__efficiency_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__length_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__perimeter_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__surface_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__thickness_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__width_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template__workers_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__coefficient_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__dosage_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__efficiency_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__height_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__length_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__price_unit_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__surface_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__thickness_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__units_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__usage_options__readonly
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__width_options__readonly
+#, python-format
+msgid "Readonly"
+msgstr "Sólo lectura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__remaining_expiration_date
+msgid "Remaining expiration date"
+msgstr "Vencimiento"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__required_line
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__required_line
+msgid "Required line"
+msgstr "Línea obligatoria"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_res_partner_quotation_commission
+msgid "Res Partner Quotation Commission"
+msgstr "Comisión de presupuesto de contacto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_user_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Result and functions"
+msgstr "Resultado y funciones"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__root_analytic_account_id
+msgid "Root analytic account"
+msgstr "Cuenta analítica principal"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation
+msgid "Sale Quotation"
+msgstr "Presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_group
+msgid "Sale Quotation Group"
+msgstr "Grupo de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_line
+msgid "Sale Quotation Line"
+msgstr "Línea de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template
+msgid "Sale Quotation Template"
+msgstr "Plantilla de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_business
+msgid "Sale Quotation Template Business"
+msgstr "Línea de negocio de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_discount
+msgid "Sale Quotation Template Discount"
+msgstr "Descuento de plantilla de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_field
+msgid "Sale Quotation Template Field"
+msgstr "Campo de plantilla de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_line
+msgid "Sale Quotation Template Line"
+msgstr "Línea de plantilla de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_line_group
+msgid "Sale Quotation Template Line Group"
+msgstr "Grupo de líneas de plantilla de presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_quotation_template_type
+msgid "Sale Quotation Template Type"
+msgstr "Tipo de presupuesto de venta"
+
+#. module: alq_sale_quotation_management
+#: model:mail.template,name:alq_sale_quotation_management.alq_sale_quotation_mail_template
+msgid "Sale Quotation: Email"
+msgstr "Presupuesto de venta: Email"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__sale_order_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#, python-format
+msgid "Sale order"
+msgstr "Proforma"
+
+#. module: alq_sale_quotation_management
+#: model:product.product,name:alq_sale_quotation_management.alq_sale_quotation_product
+#: model:product.template,name:alq_sale_quotation_management.alq_sale_quotation_product_product_template
+msgid "Sale quotation"
+msgstr "Presupuesto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__quotation_ids
+msgid "Sale quotations"
+msgstr "Presupuestos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Ventas. Anticipo pago factura"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_line__display_type__line_section
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_line__display_type__line_section
+msgid "Section"
+msgstr "Fase"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Select product"
+msgstr "Seleccione producto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Send by email"
+msgstr "Enviar por email"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__state__sent
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "Sent"
+msgstr "Ofertado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__sale_by_sections
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__sale_by_sections
+msgid "Separate sale order lines by sections"
+msgstr "Separar líneas por fase"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__sequence
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "Sequence for sale quotations not found."
+msgstr "Secuencia de presupuestos de venta no encontrada."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Set as confirmed"
+msgstr "Pasar a caliente"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Set as done"
+msgstr "Aprobar"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Set as quotation"
+msgstr "Pasar a proyecto"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Set as sent"
+msgstr "Pasar a ofertado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__show_user_commission
+msgid "Show user commission"
+msgstr "Mostrar comisión de usuario"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_analytic_account__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_analytic_line__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_move__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_account_move_line__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template_quotation_commission__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_partner_quotation_commission__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_res_users__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_advance_payment_inv__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_order__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_order_line__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_group__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_business__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_discount__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_field__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line_group__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__smart_search
+msgid "Smart Search"
+msgstr "Búsqueda inteligente"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/constants.py:0
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation__measure__square
+#: model:ir.model.fields.selection,name:alq_sale_quotation_management.selection__sale_quotation_template_type__measure__square
+#, python-format
+msgid "Square meter"
+msgstr "Metro cuadrado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__state
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__state
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_search
+msgid "State"
+msgstr "Estado"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__activity_state
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__surface
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__surface
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__surface
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__surface
+msgid "Surface"
+msgstr "Superficie"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__surface_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__surface_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__surface_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__surface_default_value
+msgid "Surface default value"
+msgstr "Superficie por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__surface_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__surface_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__surface_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__surface_options
+msgid "Surface options"
+msgstr "Opciones de superficie"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__surface_show_column
+msgid "Surface show column"
+msgstr "Mostrar columna superficie"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__surface_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__surface_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__surface_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__surface_show_field
+msgid "Surface show field"
+msgstr "Mostrar campo superficie"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_line__display_type
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template_line__display_type
+msgid "Technical field for UX purpose."
+msgstr "Campo técnico con fines de UX."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_generate_sale_quotation_wizard__template_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__template_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__template_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__template_discount_ids
+msgid "Template discounts"
+msgstr "Descuentos de plantilla"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__type_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__type_id
+msgid "Template type"
+msgstr "Tipo de plantilla"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Terms and conditions"
+msgstr "Términos y condiciones"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "Terms and conditions..."
+msgstr "Términos y condiciones..."
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "The following fields have a negative value:"
+msgstr "Los siguientes campos tienen un valor negativo:"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "The following lines are required:"
+msgstr "Las siguientes líneas son obligatorias:"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__thickness
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__thickness
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__thickness
+msgid "Thickness"
+msgstr "Espesor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__thickness_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__thickness_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__thickness_default_value
+msgid "Thickness default value"
+msgstr "Espesor por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness_measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__thickness_measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__thickness_measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__thickness_measure
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_type__thickness_measure
+msgid "Thickness measure"
+msgstr "Medida del espesor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__thickness_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__thickness_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__thickness_options
+msgid "Thickness options"
+msgstr "Opciones de espesor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness_show_column
+msgid "Thickness show column"
+msgstr "Mostrar columna de espesor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__thickness_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__thickness_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__thickness_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__thickness_show_field
+msgid "Thickness show field"
+msgstr "Mostrar campo de espesor"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_commercial_commissions
+msgid "Total commercial commissions"
+msgstr "Comisión comercial"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_commissions
+msgid "Total commissions"
+msgstr "Comisión total"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_cost
+msgid "Total cost"
+msgstr "Coste total"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_cost_distributed
+msgid "Total cost distributed"
+msgstr "Coste total distribuido"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Total cost/m"
+msgstr "Coste total/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Total cost/m²"
+msgstr "Coste total/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_price
+msgid "Total price"
+msgstr "Precio total"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_price_distributed
+msgid "Total price distributed"
+msgstr "Precio total distribuido"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Total price/m"
+msgstr "Precio total/m"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_form
+msgid "Total price/m²"
+msgstr "Precio total/m²"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_product_commissions
+msgid "Total product commissions"
+msgstr "Comisión de productos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__total_weight
+msgid "Total weight"
+msgstr "Peso total"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__activity_exception_decoration
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__units
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__units
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__units
+#: model:product.product,uom_name:alq_sale_quotation_management.alq_sale_quotation_product
+#: model:product.template,uom_name:alq_sale_quotation_management.alq_sale_quotation_product_product_template
+msgid "Units"
+msgstr "Unidades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__units_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__units_default_value
+msgid "Units default value"
+msgstr "Unidades por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__units_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__units_options
+msgid "Units options"
+msgstr "Opciones de unidades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__units_show_column
+msgid "Units show column"
+msgstr "Mostrar columna unidades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__units_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__units_show_field
+msgid "Units show field"
+msgstr "Mostrar campo unidades"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_unread
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__message_unread_counter
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Nº de mensajes sin leer"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__usage
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__usage
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__usage
+msgid "Usage"
+msgstr "Consumo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__usage_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__usage_default_value
+msgid "Usage default value"
+msgstr "Consumo por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__usage_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__usage_options
+msgid "Usage options"
+msgstr "Opciones de consumo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__usage_show_column
+msgid "Usage show column"
+msgstr "Mostrar columna consumo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__usage_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__usage_show_field
+msgid "Usage show field"
+msgstr "Mostrar campo consumo"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__user_commission
+msgid "User commission"
+msgstr "Comisión de usuario"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model,name:alq_sale_quotation_management.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__currency_id
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_line__currency_id
+msgid "Utility field to express amount currency"
+msgstr "Campo de utilidad para expresar la moneda del importe"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__waste_weight
+msgid "Waste weight"
+msgstr "Peso de los residuos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__website_message_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation__website_message_ids
+#: model:ir.model.fields,help:alq_sale_quotation_management.field_sale_quotation_template__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__weight
+msgid "Weight"
+msgstr "Peso"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__weight_delivery
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__weight_delivery
+msgid "Weight counts for delivery"
+msgstr "El peso cuenta para la entrega"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__weight_waste
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__weight_waste
+msgid "Weight counts for waste management"
+msgstr "El peso cuenta para la gestión de residuos"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__width
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__width
+msgid "Width"
+msgstr "Ancho"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__width_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__width_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__width_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__width_default_value
+msgid "Width default value"
+msgstr "Ancho por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__width_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__width_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__width_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__width_options
+msgid "Width options"
+msgstr "Opciones de ancho"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__width_show_column
+msgid "Width show column"
+msgstr "Mostrar columna ancho"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__width_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_line__width_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__width_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template_line__width_show_field
+msgid "Width show field"
+msgstr "Mostrar campo ancho"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__work_price
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__work_price
+msgid "Work price"
+msgstr "Precio"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_product__work_price_minimum
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_product_template__work_price_minimum
+msgid "Work price minimum"
+msgstr "Mínimo aplicable"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__workers
+msgid "Workers"
+msgstr "Trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__workers_default_value
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__workers_default_value
+msgid "Workers default value"
+msgstr "Trabajadores por defecto"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__workers_options
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__workers_options
+msgid "Workers options"
+msgstr "Opciones de trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__workers_show_field
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__workers_show_field
+msgid "Workers show field"
+msgstr "Mostrar campo trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"You can define a variable and use it in the formula with a name not used in "
+"the following predefined variables:"
+msgstr ""
+"Puede definir una variable y usarla en la fórmula con un nombre no utilizado en "
+"las siguientes variables predefinidas:"
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale_quotation.py:0
+#, python-format
+msgid "You can't delete a quotation without before canceling it."
+msgstr "No puede eliminar un presupuesto sin cancelarlo antes."
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/models/sale.py:0
+#, python-format
+msgid "You can't delete a sale order with sale quotations linked."
+msgstr "No puiede eliminar un pedido de venta con presupuestos asociados."
+
+#. module: alq_sale_quotation_management
+#: code:addons/alq_sale_quotation_management/wizard/generate_sale_quotation_wizard.py:0
+#, python-format
+msgid "You must select a sale quotation template."
+msgstr "Debe seleccionar una plantilla de presupuesto de venta."
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "ceil() -&gt; Function to obtain the following integer"
+msgstr "ceil() -&gt; Función para obtener el siguiente número entero"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.days -&gt; Days"
+msgstr "header.days -&gt; Días"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.delivery_weight -&gt; Delivery weight (kg)"
+msgstr "header.delivery_weight -&gt; Peso de la entrega (kg)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.efficiency -&gt; Efficiency (m/day)"
+msgstr "header.efficiency -&gt; Rendimiento (m/día)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.efficiency -&gt; Efficiency (m²/day)"
+msgstr "header.efficiency -&gt; Rendimiento (m²/día)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.get_line_by_name(\"NAME\") -&gt; Function to obtain a line by name"
+msgstr "header.get_line_by_name(\"NAME\") -&gt; Función para obtener una línea por nombre"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"header.get_special_delivery_weight() -&gt; Function to obtain the special "
+"delivery weight"
+msgstr ""
+"header.get_special_delivery_weight() -&gt; Función para obtener el peso "
+"del envío especial"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.length -&gt; Total length (m)"
+msgstr "header.length -&gt; Longitud total (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.perimeter -&gt; Total perimeter (m)"
+msgstr "header.perimeter -&gt; Perímetro total (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.surface -&gt; Total surface (m²)"
+msgstr "header.surface -&gt; Superficie total (m²)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.thickness -&gt; Total thickness (cm)"
+msgstr "header.thickness -&gt; Espesor total (cm)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.thickness -&gt; Total thickness (mm)"
+msgstr "header.thickness -&gt; Espesor total (mm)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.total_weight -&gt; Total weight (kg)"
+msgstr "header.total_weight -&gt; Peso total (kg)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.waste_weight -&gt; Weight for waste management (kg)"
+msgstr "header.waste_weight -&gt; Peso para la gestión de residuos (kg)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.width -&gt; Total width (m)"
+msgstr "header.width -&gt; Ancho total (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "header.workers -&gt; Workers"
+msgstr "header.workers -&gt; Trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.coefficient -&gt; Coefficient"
+msgstr "line.coefficient -&gt; Coeficiente"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.discount -&gt; Discount (%)"
+msgstr "line.discount -&gt; Descuento (%)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.dosage -&gt; Dosage"
+msgstr "line.dosage -&gt; Dosificación"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.efficiency -&gt; Efficiency (m/day)"
+msgstr "line.efficiency -&gt; Rendimiento (m/día)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.efficiency -&gt; Efficiency (m²/day)"
+msgstr "line.efficiency -&gt; Rendimiento (m²/día)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"line.get_price_distributed_section() -&gt; Function to obtain the section "
+"price/m"
+msgstr ""
+"line.get_price_distributed_section() -&gt; Función para obtener el precio/m de "
+"la fase"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"line.get_price_distributed_section() -&gt; Function to obtain the section "
+"price/m²"
+msgstr ""
+"line.get_price_distributed_section() -&gt; Función para obtener el precio/m² de"
+" la fase"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid ""
+"line.get_price_total_section() -&gt; Function to obtain the section total "
+"price"
+msgstr ""
+"line.get_price_total_section() -&gt; Función para obtener el precio total de"
+" la fase"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.height -&gt; Height (m)"
+msgstr "line.height -&gt; Altura (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.length -&gt; Length (m)"
+msgstr "line.length -&gt; Longitud (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.price_unit -&gt; Product price unit (€)"
+msgstr "line.price_unit -&gt; Precio unitario del producto (€)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.quantity -&gt; Calculed quantity"
+msgstr "line.quantity -&gt; Cantidad calculada con fórmula"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.surface -&gt; Surface (m²)"
+msgstr "line.surface -&gt; Superficie (m²)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.thickness -&gt; Thickness (cm)"
+msgstr "line.thickness -&gt; Espesor (cm)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.thickness -&gt; Thickness (mm)"
+msgstr "line.thickness -&gt; Espesor (mm)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.units -&gt; Units"
+msgstr "line.units -&gt; Unidades"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.usage -&gt; Usage"
+msgstr "line.usage -&gt; Consumo"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.weight -&gt; Product weight (kg)"
+msgstr "line.weight -&gt; Peso del producto (kg)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "line.width -&gt; Width (m)"
+msgstr "line.width -&gt; Ancho (m)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.efficiency_umbral -&gt; Efficiency umbral"
+msgstr "product.efficiency_umbral -&gt; Umbral rendimiento"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.major_dividend -&gt; Major dividend"
+msgstr "product.major_dividend -&gt; Dividendo mayor"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.minimum_workers -&gt; Minimum number of workers"
+msgstr "product.minimum_workers -&gt; Número mínimo de trabajadores"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.minor_dividend -&gt; Minor dividend"
+msgstr "product.minor_dividend -&gt; Dividendo menor"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.work_price -&gt; Work price (€)"
+msgstr "product.work_price -&gt; Precio de mano de obra (€)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "product.work_price_minimum -&gt; Minimum work price (€)"
+msgstr "product.work_price_minimum -&gt; Precio mínimo aplicable de mano de obra (€)"
+
+#. module: alq_sale_quotation_management
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management.sale_quotation_template_form
+msgid "result -&gt; Formula operation result"
+msgstr "result -&gt; Resultado de la fórmula"
+
+#. module: alq_sale_quotation_management
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation__activity_team_user_ids
+#: model:ir.model.fields,field_description:alq_sale_quotation_management.field_sale_quotation_template__activity_team_user_ids
+msgid "test field"
+msgstr "Campo de prueba"
+
+#. module: alq_sale_quotation_management
+#: model:mail.template,subject:alq_sale_quotation_management.alq_sale_quotation_mail_template
+msgid ""
+"{{ object.user_id.company_id.name }} {{ '- Sale Quotation:' }} {{ "
+"object.name or '' }}"
+msgstr ""
+"{{ object.user_id.company_id.name }} {{ '- Presupuesto:' }} {{ "
+"object.name or '' }}"
+

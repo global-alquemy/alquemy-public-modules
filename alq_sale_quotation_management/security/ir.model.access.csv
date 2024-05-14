@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_generate_sale_quotation_wizard,generate.sale.quotation.wizard,model_generate_sale_quotation_wizard,base.group_user,1,1,1,1
+access_product_template_quotation_commission,product.template.quotation.commission,model_product_template_quotation_commission,base.group_user,1,1,1,1
+access_res_partner_quotation_commission,res.partner.quotation.commission,model_res_partner_quotation_commission,base.group_user,1,1,1,1
+access_sale_quotation,sale.quotation,model_sale_quotation,base.group_user,1,1,1,1
+access_sale_quotation_group,sale.quotation.group,model_sale_quotation_group,base.group_user,1,1,1,1
+access_sale_quotation_line,sale.quotation.line,model_sale_quotation_line,base.group_user,1,1,1,1
+access_sale_quotation_template,sale.quotation.template,model_sale_quotation_template,base.group_user,1,1,1,1
+access_sale_quotation_template_business,sale.quotation.template.business,model_sale_quotation_template_business,base.group_user,1,1,1,1
+access_sale_quotation_template_discount,sale.quotation.template.discount,model_sale_quotation_template_discount,base.group_user,1,1,1,1
+access_sale_quotation_template_field,sale.quotation.template.field,model_sale_quotation_template_field,base.group_user,1,1,1,1
+access_sale_quotation_template_line,sale.quotation.template.line,model_sale_quotation_template_line,base.group_user,1,1,1,1
+access_sale_quotation_template_line_group,sale.quotation.template.line.group,model_sale_quotation_template_line_group,base.group_user,1,1,1,1
+access_sale_quotation_template_type,sale.quotation.template.type,model_sale_quotation_template_type,base.group_user,1,1,1,1

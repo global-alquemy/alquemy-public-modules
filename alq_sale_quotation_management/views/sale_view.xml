@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="sale.menu_sale_order"
+              name="Proforma"
+              action="sale.action_orders"
+              parent="sale.sale_order_menu"
+              sequence="2"/>
+
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="name">Proforma</field>
+        <field name="domain" eval="False"/>
+    </record>
+
+    <record id="quotation_sale_order_form" model="ir.ui.view">
+        <field name="name">quotation.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="string">Proforma</attribute>
+            </form>
+            <div name="button_box" position="inside">
+                <field name="quotation_ids" invisible="1"/>
+                <button type="object" name="button_view_quotations" class="oe_stat_button" icon="fa-usd" attrs="{'invisible': [('quotation_ids', '=', [])]}">
+                    <field name="quotations_count" widget="statinfo" string="Quotations"/>
+                </button>
+            </div>
+            <group name="technical" position="inside">
+                <field name="construction_id" readonly="1"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="quotation_sale_order_list_select" model="ir.ui.view">
+        <field name="name">quotation.sale.order.list.select</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <search position="attributes">
+                <attribute name="string">Proforma</attribute>
+            </search>
+            <field name="user_id" position="before">
+                <field name="construction_id"/>
+            </field>
+            <group position="inside">
+                <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="quotation_sale_order_tree" model="ir.ui.view">
+        <field name="name">quotation.sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="string">Proforma</attribute>
+            </tree>
+            <field name="user_id" position="before">
+                <field name="construction_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

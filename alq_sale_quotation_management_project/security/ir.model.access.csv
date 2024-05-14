@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_construction_hour,construction.hour,model_construction_hour,base.group_user,1,1,1,1
+access_construction_piecework,construction.piecework,model_construction_piecework,base.group_user,1,1,1,1
+access_construction_surface,construction.surface,model_construction_surface,base.group_user,1,1,1,1
+access_construction_worksheet_piecework,construction.worksheet.piecework,model_construction_worksheet_piecework,base.group_user,1,1,1,1

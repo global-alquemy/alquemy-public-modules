@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="sale_quotation_form" model="ir.ui.view">
+        <field name="name">sale.quotation.form</field>
+        <field name="model">sale.quotation</field>
+        <field name="arch" type="xml">
+            <form string="Quotation" create="0" class="quotation-form">
+                <header>
+                    <button name="action_sent" type="object" string="Set as sent" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <!-- <button name="action_quotation" type="object" string="Set as quotation" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'sent')]}"/> -->
+                    <!-- <button name="action_confirmed" type="object" id="action_confirmed" string="Set as confirmed" attrs="{'invisible': [('state', '!=', 'sent')]}"/> -->
+                    <!-- <button name="action_confirmed" type="object" id="action_confirmed_hl" string="Set as confirmed" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'quotation')]}"/> -->
+                    <!-- <button name="action_done" type="object" id="action_done" string="Set as done" confirm="Are you sure to consider this quotation as done?" attrs="{'invisible': [('state', '!=', 'quotation')]}"/> -->
+                    <!-- <button name="action_done" type="object" id="action_done_hl" string="Set as done" class="oe_highlight" confirm="Are you sure to consider this quotation as done?" attrs="{'invisible': [('state', '!=', 'confirmed')]}"/> -->
+                    <button name="action_done" type="object" string="Set as done" class="oe_highlight" confirm="Are you sure to consider this quotation as done?" attrs="{'invisible': [('state', '!=', 'sent')]}"/>
+                    <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': [('state', 'not in', ['confirmed', 'draft', 'quotation', 'sent'])]}"/>
+                    <button name="action_draft" type="object" string="Back to draft" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <button name="action_send_email" type="object" string="Send by email" attrs="{'invisible': [('state', 'in', ['cancel', 'draft'])]}"/>
+                    <button name="create_new_version" type="object" string="Create new version" attrs="{'invisible': ['|', ('state', '=', 'done'), ('group_done', '=', True)]}"/>
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_draft" attrs="{'invisible': [('state', '!=', 'draft')]}"/> -->
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_sent" attrs="{'invisible': [('state', '!=', 'sent')]}"/> -->
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_quotation" attrs="{'invisible': [('state', '!=', 'quotation')]}"/> -->
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_confirmed" attrs="{'invisible': [('state', '!=', 'confirmed')]}"/> -->
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_done" attrs="{'invisible': [('state', '!=', 'done')]}"/> -->
+                    <!-- <field name="state" widget="statusbar" statusbar_visible="draft,sent,quotation,confirmed" readonly="1" class="status_cancel" attrs="{'invisible': [('state', '!=', 'cancel')]}"/> -->
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done" readonly="1" class="status_draft" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done" readonly="1" class="status_sent" attrs="{'invisible': [('state', '!=', 'sent')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done" readonly="1" class="status_done" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,done" readonly="1" class="status_cancel" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="sale_order_id" invisible="1"/>
+                        <button type="object" name="button_view_sale_order" string="Sale order" class="oe_stat_button" icon="fa-usd" attrs="{'invisible': [('sale_order_id', '=', False)]}"/>
+                    </div>
+                    <div class="oe_title" name="title">
+                        <h1><field name="display_name" readonly="1"/></h1>
+                    </div>
+                    <group name="info">
+                        <group name="general_info">
+                            <field name="partner_id" required="1" domain="[('is_customer', '=', True)]" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="partner_shipping_id" required="1" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': True, 'show_vat': False}" options="{'always_reload': True}" domain="[('parent_id', '=', partner_id), ('type', '=', 'delivery')]" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        </group>
+                        <group name="fields_info">
+                            <field name="thickness_show_column" invisible="1"/>
+                            <field name="dosage_show_column" invisible="1"/>
+                            <field name="usage_show_column" invisible="1"/>
+                            <field name="coefficient_show_column" invisible="1"/>
+                            <field name="surface_show_column" invisible="1"/>
+                            <field name="length_show_column" invisible="1"/>
+                            <field name="units_show_column" invisible="1"/>
+                            <field name="efficiency_show_column" invisible="1"/>
+                            <field name="width_show_column" invisible="1"/>
+                            <field name="height_show_column" invisible="1"/>
+                            <field name="surface_default_value" invisible="1"/>
+                            <field name="surface_show_field" invisible="1"/>
+                            <field name="surface_options" invisible="1"/>
+                            <label for="surface" attrs="{'invisible': [('surface_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_surface" attrs="{'invisible': [('surface_show_field', '=', False)]}">
+                                <field name="surface" force_save="1" attrs="{'readonly': ['|', ('surface_options', 'in', ['compute', 'readonly']), ('state', '=', 'done')]}"/>
+                                <span>m²</span>
+                            </div>
+                            <field name="thickness_default_value" invisible="1"/>
+                            <field name="thickness_show_field" invisible="1"/>
+                            <field name="thickness_options" invisible="1"/>
+                            <label for="thickness" attrs="{'invisible': [('thickness_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_thickness" attrs="{'invisible': [('thickness_show_field', '=', False)]}">
+                                <field name="thickness" force_save="1" attrs="{'readonly': ['|', ('thickness_options', 'in', ['compute', 'readonly']), ('state', '=', 'done')]}"/>
+                                <span attrs="{'invisible': [('thickness_measure', '!=', 'cm')]}">cm</span>
+                                <span attrs="{'invisible': [('thickness_measure', '!=', 'mm')]}">mm</span>
+                            </div>
+                            <field name="perimeter_default_value" invisible="1"/>
+                            <field name="perimeter_show_field" invisible="1"/>
+                            <field name="perimeter_options" invisible="1"/>
+                            <label for="perimeter" attrs="{'invisible': [('perimeter_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_perimeter" attrs="{'invisible': [('perimeter_show_field', '=', False)]}">
+                                <field name="perimeter" force_save="1" attrs="{'readonly': ['|', ('perimeter_options', '=', 'readonly'), ('state', '=', 'done')]}"/>
+                                <span>m</span>
+                            </div>
+                            <field name="length_default_value" invisible="1"/>
+                            <field name="length_show_field" invisible="1"/>
+                            <field name="length_options" invisible="1"/>
+                            <label for="length" attrs="{'invisible': [('length_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_length" attrs="{'invisible': [('length_show_field', '=', False)]}">
+                                <field name="length" force_save="1" attrs="{'readonly': ['|', ('length_options', 'in', ['compute', 'readonly']), ('state', '=', 'done')]}"/>
+                                <span>m</span>
+                            </div>
+                            <field name="width_default_value" invisible="1"/>
+                            <field name="width_show_field" invisible="1"/>
+                            <field name="width_options" invisible="1"/>
+                            <label for="width" attrs="{'invisible': [('width_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_width" attrs="{'invisible': [('width_show_field', '=', False)]}">
+                                <field name="width" force_save="1" attrs="{'readonly': ['|', ('width_options', '=', 'readonly'), ('state', '=', 'done')]}"/>
+                                <span>m</span>
+                            </div>
+                            <field name="efficiency_default_value" invisible="1"/>
+                            <field name="efficiency_show_field" invisible="1"/>
+                            <field name="efficiency_options" invisible="1"/>
+                            <label for="efficiency" attrs="{'invisible': [('efficiency_show_field', '=', False)]}"/>
+                            <div class="o_row" name="header_efficiency" attrs="{'invisible': [('efficiency_show_field', '=', False)]}">
+                                <field name="efficiency" force_save="1" attrs="{'readonly': ['|', ('efficiency_options', '=', 'readonly'), ('state', '=', 'done')]}"/>
+                                <span attrs="{'invisible': [('measure', '!=', 'linear')]}">m/day</span>
+                                <span attrs="{'invisible': [('measure', '!=', 'square')]}">m²/day</span>
+                            </div>
+                            <field name="days_default_value" invisible="1"/>
+                            <field name="days_show_field" invisible="1"/>
+                            <field name="days_options" invisible="1"/>
+                            <field name="days" force_save="1" attrs="{'invisible': [('days_show_field', '=', False)], 'readonly': ['|', ('days_options', '=', 'readonly'), ('state', '=', 'done')]}"/>
+                            <field name="workers_default_value" invisible="1"/>
+                            <field name="workers_show_field" invisible="1"/>
+                            <field name="workers_options" invisible="1"/>
+                            <field name="workers" force_save="1" attrs="{'invisible': [('workers_show_field', '=', False)], 'readonly': ['|', ('workers_options', '=', 'readonly'), ('state', '=', 'done')]}"/>
+                        </group>
+                        <group name="other_info">
+                            <separator colspan="2"/>
+                            <field name="operating_unit_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="business_line_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="business_line_ids" invisible="1"/>
+                            <field name="type_id" invisible="1"/>
+                            <field name="quotation_template_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <label for="commercial_id"/>
+                            <div class="o_row" name="div_commercial_id">
+                                <field name="commercial_id" required="1" options="{'no_open': True, 'no_create': True}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                <field name="commercial_commission" invisible="1"/>
+                                <span invisible="1">%</span>
+                            </div>
+                            <field name="show_user_commission" invisible="1"/>
+                            <label for="user_id" string="Associated commercial"/>
+                            <div class="o_row" name="div_user_id">
+                                <field name="user_id" required="1" options="{'no_open': True, 'no_create': True}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                <field name="user_commission" attrs="{'invisible': [('show_user_commission', '=', False)], 'readonly': [('state', '=', 'done')]}"/>
+                                <span attrs="{'invisible': [('show_user_commission', '=', False)]}">%</span>
+                            </div>
+                            <field name="name" invisible="1"/>
+                            <field name="construction_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="description" string="Invoice description" attrs="{'readonly': [('state', '=', 'done')]}" invisible="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="measure" invisible="1"/>
+                            <field name="thickness_measure" invisible="1"/>
+                            <field name="field_ids" invisible="1"/>
+                        </group>
+                        <group name="extra_info">
+                            <separator colspan="2"/>
+                            <field name="date" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="expiration_days" invisible="1"/>
+                            <field name="expiration_date" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="remaining_expiration_date" invisible="1"/>
+                            <field name="date_status" invisible="1"/>
+                            <label for="delivery_weight" invisible="1"/>
+                            <div class="o_row" name="div_delivery_weight" invisible="1">
+                                <field name="delivery_weight"/>
+                                <span>kg</span>
+                            </div>
+                            <label for="waste_weight" invisible="1"/>
+                            <div class="o_row" name="div_waste_weight" invisible="1">
+                                <field name="waste_weight"/>
+                                <span>kg</span>
+                            </div>
+                            <label for="total_weight" invisible="1"/>
+                            <div class="o_row" name="div_total_weight" invisible="1">
+                                <field name="total_weight"/>
+                                <span>kg</span>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="page_lines" string="Lines">
+                            <field name="line_ids" context="{'default_quotation_id': active_id}" attrs="{'readonly': [('state', '=', 'done')]}">
+                                <tree editable="bottom" create="0" delete="0" limit="1000" decoration-bf="display_type == 'line_section'" class="quotation-lines">
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="display_type" invisible="1"/>
+                                    <field name="quotation_id" invisible="1"/>
+                                    <field name="business_line_ids" invisible="1"/>
+                                    <field name="measure" invisible="1"/>
+                                    <field name="thickness_measure" invisible="1"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="quotation_template_line_id" invisible="1"/>
+                                    <field name="template_id" invisible="1"/>
+                                    <field name="duplicated_line" invisible="1"/>
+                                    <field name="group_id" invisible="1"/>
+                                    <field name="required_line" invisible="1"/>
+                                    <field name="weight_delivery" invisible="1"/>
+                                    <field name="is_reference_line" invisible="1"/>
+                                    <field name="editable_name" invisible="1"/>
+                                    <button name="unlink_line" type="object" icon="fa-trash" attrs="{'invisible': ['|', '|', ('display_type', '!=', False), ('duplicated_line', '=', False), ('state', '!=', 'draft')]}"/>
+                                    <button name="copy_line" type="object" icon="fa-plus" attrs="{'invisible': ['|', '|', ('display_type', '!=', False), ('duplicated_line', '=', True), ('state', '!=', 'draft')]}"/>
+                                    <field name="name" force_save="1" attrs="{'readonly': [('duplicated_line', '=', False), ('editable_name', '=', False)]}"/>
+                                    <field name="product_commission" invisible="1"/>
+                                    <field name="product_domain" invisible="1"/>
+                                    <field name="product_id" domain="product_domain" attrs="{'invisible': [('display_type', '!=', False)]}"/>
+                                    <field name="weight" invisible="1"/>
+                                    <field name="description" invisible="1"/>
+                                    <field name="min_price_unit" invisible="1"/>
+                                    <field name="priority_price" invisible="1"/>
+                                    <field name="price_unit_default_value" invisible="1"/>
+                                    <field name="price_unit_options" invisible="1"/>
+                                    <field name="price_unit" decoration-danger="price_unit &lt;= min_price_unit" force_save="1" attrs="{'invisible': ['|', ('display_type', '!=', False), ('price_unit_options', '=', 'invisible')], 'readonly': [('price_unit_options', '=', 'readonly')]}"/>
+                                    <field name="max_discount" invisible="1"/>
+                                    <field name="template_discount_ids" invisible="1"/>
+                                    <field name="discount_ids" invisible="1"/>
+                                    <field name="discount_id" string="Discount" required="1" domain="[('id', 'in', discount_ids)]" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('display_type', '!=', False)]}"/>
+                                    <field name="discount" invisible="1"/>
+                                    <field name="formula_quantity_editable" invisible="1"/>
+                                    <field name="formula_quantity" invisible="1"/>
+                                    <field name="quantity" attrs="{'invisible': [('display_type', '!=', False)]}"/>
+                                    <field name="header_thickness_show_field" invisible="1"/>
+                                    <field name="header_surface_show_field" invisible="1"/>
+                                    <field name="header_perimeter_show_field" invisible="1"/>
+                                    <field name="header_length_show_field" invisible="1"/>
+                                    <field name="header_width_show_field" invisible="1"/>
+                                    <field name="header_efficiency_show_field" invisible="1"/>
+                                    <field name="header_days_show_field" invisible="1"/>
+                                    <field name="header_workers_show_field" invisible="1"/>
+                                    <field name="thickness_default_value" invisible="1"/>
+                                    <field name="thickness_show_field" invisible="1"/>
+                                    <field name="thickness_options" invisible="1"/>
+                                    <field name="thickness" force_save="1" attrs="{'column_invisible': [('parent.thickness_show_column', '=', False)], 'invisible': [('thickness_options', '=', 'invisible')], 'readonly': [('thickness_options', '=', 'readonly')]}"/>
+                                    <field name="dosage_default_value" invisible="1"/>
+                                    <field name="dosage_show_field" invisible="1"/>
+                                    <field name="dosage_options" invisible="1"/>
+                                    <field name="dosage" force_save="1" attrs="{'column_invisible': [('parent.dosage_show_column', '=', False)], 'invisible': [('dosage_options', '=', 'invisible')], 'readonly': [('dosage_options', '=', 'readonly')]}"/>
+                                    <field name="usage_default_value" invisible="1"/>
+                                    <field name="usage_show_field" invisible="1"/>
+                                    <field name="usage_options" invisible="1"/>
+                                    <field name="usage" force_save="1" attrs="{'column_invisible': [('parent.usage_show_column', '=', False)], 'invisible': [('usage_options', '=', 'invisible')], 'readonly': [('usage_options', '=', 'readonly')]}"/>
+                                    <field name="coefficient_default_value" invisible="1"/>
+                                    <field name="coefficient_show_field" invisible="1"/>
+                                    <field name="coefficient_options" invisible="1"/>
+                                    <field name="coefficient" force_save="1" attrs="{'column_invisible': [('parent.coefficient_show_column', '=', False)], 'invisible': [('coefficient_options', '=', 'invisible')], 'readonly': [('coefficient_options', '=', 'readonly')]}"/>
+                                    <field name="surface_default_value" invisible="1"/>
+                                    <field name="surface_show_field" invisible="1"/>
+                                    <field name="surface_options" invisible="1"/>
+                                    <field name="surface" force_save="1" attrs="{'column_invisible': [('parent.surface_show_column', '=', False)], 'invisible': [('surface_options', '=', 'invisible')], 'readonly': [('surface_options', '=', 'readonly')]}"/>
+                                    <field name="length_default_value" invisible="1"/>
+                                    <field name="length_show_field" invisible="1"/>
+                                    <field name="length_options" invisible="1"/>
+                                    <field name="length" force_save="1" attrs="{'column_invisible': [('parent.length_show_column', '=', False)], 'invisible': [('length_options', '=', 'invisible')], 'readonly': [('length_options', '=', 'readonly')]}"/>
+                                    <field name="units_default_value" invisible="1"/>
+                                    <field name="units_show_field" invisible="1"/>
+                                    <field name="units_options" invisible="1"/>
+                                    <field name="units" force_save="1" attrs="{'column_invisible': [('parent.units_show_column', '=', False)], 'invisible': [('units_options', '=', 'invisible')], 'readonly': [('units_options', '=', 'readonly')]}"/>
+                                    <field name="efficiency_default_value" invisible="1"/>
+                                    <field name="efficiency_show_field" invisible="1"/>
+                                    <field name="efficiency_options" invisible="1"/>
+                                    <field name="efficiency" force_save="1" attrs="{'column_invisible': [('parent.efficiency_show_column', '=', False)], 'invisible': [('efficiency_options', '=', 'invisible')], 'readonly': [('efficiency_options', '=', 'readonly')]}"/>
+                                    <field name="width_default_value" invisible="1"/>
+                                    <field name="width_show_field" invisible="1"/>
+                                    <field name="width_options" invisible="1"/>
+                                    <field name="width" force_save="1" attrs="{'column_invisible': [('parent.width_show_column', '=', False)], 'invisible': [('width_options', '=', 'invisible')], 'readonly': [('width_options', '=', 'readonly')]}"/>
+                                    <field name="height_default_value" invisible="1"/>
+                                    <field name="height_show_field" invisible="1"/>
+                                    <field name="height_options" invisible="1"/>
+                                    <field name="height" force_save="1" attrs="{'column_invisible': [('parent.height_show_column', '=', False)], 'invisible': [('height_options', '=', 'invisible')], 'readonly': [('height_options', '=', 'readonly')]}"/>
+                                    <field name="formula_price_distributed_editable" invisible="1"/>
+                                    <field name="formula_price_distributed" invisible="1"/>
+                                    <!-- TODO: Show string="Price/m²" for measure == 'square'. -->
+                                    <!-- TODO: Show string="Price/m" for measure == 'linear'. -->
+                                    <field name="price_distributed" string="Price/m²"/>
+                                    <field name="formula_price_total_editable" invisible="1"/>
+                                    <field name="formula_price_total" invisible="1"/>
+                                    <field name="price_total"/>
+                                </tree>
+                            </field>
+                            <group name="totals_group" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4" name="commissions_group">
+                                    <field name="total_commercial_commissions" invisible="1"/>
+                                    <field name="total_product_commissions" invisible="1"/>
+                                    <field name="total_commissions" class="oe_subtotal_footer_separator" invisible="1"/>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="price_group">
+                                    <field name="total_cost"/>
+                                    <div class="oe_inline o_td_label" name="div_total_cost_distributed_label">
+                                        <label for="total_cost_distributed" string="Total cost/m" attrs="{'invisible': [('measure', '!=', 'linear')]}"/>
+                                        <label for="total_cost_distributed" string="Total cost/m²" attrs="{'invisible': [('measure', '!=', 'square')]}"/>
+                                    </div>
+                                    <field name="total_cost_distributed" nolabel="1"/>
+                                    <field name="margin_coefficient" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                    <label for="margin" string="Margin (%)"/>
+                                    <field name="margin" nolabel="1"/>
+                                    <field name="margin_price"/>
+                                    <div class="oe_inline o_td_label" name="div_margin_price_distributed_label">
+                                        <label for="margin_price_distributed" string="Margin price/m" attrs="{'invisible': [('measure', '!=', 'linear')]}"/>
+                                        <label for="margin_price_distributed" string="Margin price/m²" attrs="{'invisible': [('measure', '!=', 'square')]}"/>
+                                    </div>
+                                    <field name="margin_price_distributed" nolabel="1"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label" name="div_total_price_distributed_label" attrs="{'invisible': [('hide_distributed_data', '=', True)]}">
+                                        <label for="total_price_distributed" string="Total price/m" attrs="{'invisible': [('measure', '!=', 'linear')]}"/>
+                                        <label for="total_price_distributed" string="Total price/m²" attrs="{'invisible': [('measure', '!=', 'square')]}"/>
+                                    </div>
+                                    <field name="total_price_distributed" nolabel="1" class="oe_subtotal_footer_separator" attrs="{'invisible': [('hide_distributed_data', '=', True)]}"/>
+                                    <div class="oe_inline o_td_label" attrs="{'invisible': [('hide_distributed_data', '=', True)]}">
+                                        <label for="total_price"/>
+                                    </div>
+                                    <field name="total_price" nolabel="1" attrs="{'invisible': [('hide_distributed_data', '=', True)]}"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label" attrs="{'invisible': [('hide_distributed_data', '=', False)]}">
+                                        <label for="total_price"/>
+                                    </div>
+                                    <field name="total_price" nolabel="1" class="oe_subtotal_footer_separator" attrs="{'invisible': [('hide_distributed_data', '=', False)]}"/>
+                                    <separator colspan="2"/>
+                                    <div class="oe_inline o_td_label" name="div_hide_distributed_data_label">
+                                        <label for="hide_distributed_data" string="Hide prices/m" attrs="{'invisible': [('measure', '!=', 'linear')]}"/>
+                                        <label for="hide_distributed_data" string="Hide prices/m²" attrs="{'invisible': [('measure', '!=', 'square')]}"/>
+                                    </div>
+                                    <field name="hide_distributed_data" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                </group>
+                                <div class="oe_clear"/>
+                            </group>
+                        </page>
+                        <page name="page_other_info" string="Other information">
+                            <group name="main_other_info">
+                                <group name="quotation_info">
+                                    <field name="analytic_account_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="group_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="group_done" invisible="1"/>
+                                    <field name="origin" readonly="1"/>
+                                </group>
+                                <group name="sale_info">
+                                    <field name="sale_product_id" domain="[('detailed_type', '=', 'service')]" options="{'no_open': True, 'no_create': True}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                    <field name="sale_distributed_product_id" required="1" domain="[('detailed_type', '=', 'service')]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="sale_by_sections" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="page_note" string="Terms and conditions">
+                            <group name="main_note">
+                                <field name="note" nolabel="1" placeholder="Terms and conditions..." attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            </group>
+                        </page>
+                        <page name="page_internal_notes" string="Internal notes">
+                            <group name="group_internal_notes">
+                                <field name="internal_notes" nolabel="1" colspan="2" placeholder="Internal notes..." attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_quotation_search" model="ir.ui.view">
+        <field name="name">sale.quotation.search</field>
+        <field name="model">sale.quotation</field>
+        <field name="arch" type="xml">
+            <search string="Quotations">
+                <field name="name"/>
+                <field name="construction_id"/>
+                <field name="origin"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="partner_shipping_id" string="Construction address"/>
+                <field name="business_line_id"/>
+                <field name="operating_unit_id"/>
+                <field name="commercial_id"/>
+                <field name="user_id" string="Associated commercial"/>
+                <field name="state"/>
+                <separator/>
+                <filter string="My quotations" name="filter_my_quotations" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Quotation date" name="filter_quotation_date" date="date"/>
+                <filter string="Expiration date" name="filter_expiration_date" date="expiration_date"/>
+                <separator/>
+                <filter string="Draft" name="filter_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Sent" name="filter_sent" domain="[('state', '=', 'sent')]"/>
+                <filter string="Quotation" name="filter_quotation" domain="[('state', '=', 'quotation')]"/>
+                <filter string="Confirmed" name="filter_confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter string="Done" name="filter_done" domain="[('state', '=', 'done')]"/>
+                <filter string="Canceled" name="filter_cancel" domain="[('state', '=', 'cancel')]"/>
+                <group expand="0" string="Group by">
+                    <filter string="Customer" name="groupby_customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Construction address" name="groupby_construction_address" domain="[]" context="{'group_by': 'partner_shipping_id'}"/>
+                    <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+                    <filter string="Business line" name="groupby_business_line" domain="[]" context="{'group_by': 'business_line_id'}"/>
+                    <filter string="Operating unit" name="groupby_operating_unit" domain="[]" context="{'group_by': 'operating_unit_id'}"/>
+                    <filter string="Commercial" name="groupby_commercial" domain="[]" context="{'group_by': 'commercial_id'}"/>
+                    <filter string="Associated commercial" name="groupby_user" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter string="State" name="groupby_state" domain="[]" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_quotation_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.tree</field>
+        <field name="model">sale.quotation</field>
+        <field name="arch" type="xml">
+            <tree string="Quotations" create="0" class="quotation-tree">
+                <field name="display_name"/>
+                <field name="name" invisible="1"/>
+                <field name="partner_id"/>
+                <field name="partner_shipping_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="commercial_id" optional="show"/>
+                <field name="construction_id" optional="show"/>
+                <field name="description" optional="hide"/>
+                <field name="group_id" optional="hide"/>
+                <field name="origin" optional="hide"/>
+                <field name="user_id" string="Associated commercial" optional="hide"/>
+                <field name="operating_unit_id" optional="hide"/>
+                <field name="type_id" invisible="1"/>
+                <field name="quotation_template_id" optional="hide"/>
+                <field name="business_line_id" optional="show"/>
+                <field name="business_line_ids" invisible="1"/>
+                <field name="measure" invisible="1"/>
+                <field name="thickness_measure" invisible="1"/>
+                <field name="field_ids" invisible="1"/>
+                <field name="line_ids" invisible="1"/>
+                <field name="date" optional="show"/>
+                <field name="expiration_days" invisible="1"/>
+                <field name="remaining_expiration_date" widget="remaining_days" optional="show"/>
+                <field name="expiration_date" optional="show"/>
+                <field name="analytic_account_id" optional="hide"/>
+                <field name="sale_product_id" optional="hide"/>
+                <field name="sale_distributed_product_id" optional="hide"/>
+                <field name="sale_by_sections" optional="hide"/>
+                <field name="delivery_weight" invisible="1"/>
+                <field name="waste_weight" invisible="1"/>
+                <field name="total_weight" invisible="1"/>
+                <field name="thickness_show_column" invisible="1"/>
+                <field name="dosage_show_column" invisible="1"/>
+                <field name="usage_show_column" invisible="1"/>
+                <field name="coefficient_show_column" invisible="1"/>
+                <field name="surface_show_column" invisible="1"/>
+                <field name="length_show_column" invisible="1"/>
+                <field name="units_show_column" invisible="1"/>
+                <field name="efficiency_show_column" invisible="1"/>
+                <field name="width_show_column" invisible="1"/>
+                <field name="height_show_column" invisible="1"/>
+                <field name="surface_default_value" invisible="1"/>
+                <field name="surface_show_field" invisible="1"/>
+                <field name="surface_options" invisible="1"/>
+                <field name="surface" optional="hide"/>
+                <field name="thickness_default_value" invisible="1"/>
+                <field name="thickness_show_field" invisible="1"/>
+                <field name="thickness_options" invisible="1"/>
+                <field name="thickness" optional="hide"/>
+                <field name="perimeter_default_value" invisible="1"/>
+                <field name="perimeter_show_field" invisible="1"/>
+                <field name="perimeter_options" invisible="1"/>
+                <field name="perimeter" optional="hide"/>
+                <field name="length_default_value" invisible="1"/>
+                <field name="length_show_field" invisible="1"/>
+                <field name="length_options" invisible="1"/>
+                <field name="length" optional="hide"/>
+                <field name="width_default_value" invisible="1"/>
+                <field name="width_show_field" invisible="1"/>
+                <field name="width_options" invisible="1"/>
+                <field name="width" optional="hide"/>
+                <field name="efficiency_default_value" invisible="1"/>
+                <field name="efficiency_show_field" invisible="1"/>
+                <field name="efficiency_options" invisible="1"/>
+                <field name="efficiency" optional="hide"/>
+                <field name="days_default_value" invisible="1"/>
+                <field name="days_show_field" invisible="1"/>
+                <field name="days_options" invisible="1"/>
+                <field name="days" optional="hide"/>
+                <field name="workers_default_value" invisible="1"/>
+                <field name="workers_show_field" invisible="1"/>
+                <field name="workers_options" invisible="1"/>
+                <field name="workers" optional="hide"/>
+                <field name="internal_notes" invisible="1"/>
+                <field name="note" invisible="1"/>
+                <field name="total_cost" optional="hide"/>
+                <field name="total_cost_distributed" string="Cost distributed" optional="hide"/>
+                <field name="margin_coefficient" optional="hide"/>
+                <field name="margin" string="Margin (%)" optional="hide"/>
+                <field name="margin_price" optional="hide"/>
+                <field name="margin_price_distributed" string="Margin distributed" optional="hide"/>
+                <field name="total_price" optional="show"/>
+                <field name="total_price_distributed" string="Price distributed" optional="hide"/>
+                <field name="hide_distributed_data" optional="hide"/>
+                <field name="date_status" optional="hide"/>
+                <field name="sale_order_id" invisible="1"/>
+                <field name="state" widget="badge" decoration-muted="state == 'draft'" decoration-info="state == 'sent'" decoration-warning="state == 'quotation'" decoration-danger="state == 'confirmed'" decoration-success="state == 'done'" decoration-primary="state == 'cancel'" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_action" model="ir.actions.act_window">
+        <field name="name">Quotations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sale_quotation_tree"/>
+        <field name="search_view_id" ref="sale_quotation_search"/>
+        <field name="context">{"search_default_filter_my_quotations": 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale.menu_sale_quotations"
+              name="Quotations"
+              action="alq_sale_quotation_management.sale_quotation_action"
+              parent="sale.sale_order_menu"
+              sequence="1"/>
+
+</odoo>

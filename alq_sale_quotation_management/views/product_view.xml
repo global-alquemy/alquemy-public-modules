@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="quotation_product_template_common_form" model="ir.ui.view">
+        <field name="name">quotation.product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="quotation_configuration" string="Quotation configuration">
+                    <group name="quotation_data">
+                        <group name="quotation_fields" string="Quotation fields">
+                            <field name="thickness"/>
+                            <field name="dosage"/>
+                            <field name="usage"/>
+                            <field name="coefficient"/>
+                            <field name="surface"/>
+                            <field name="length"/>
+                            <field name="units"/>
+                            <field name="efficiency"/>
+                        </group>
+                        <group name="work_fields" string="Labor">
+                            <field name="work_price"/>
+                            <field name="major_dividend"/>
+                            <field name="minor_dividend"/>
+                            <field name="work_price_minimum"/>
+                            <field name="efficiency_umbral"/>
+                            <field name="minimum_workers"/>
+                        </group>
+                        <group name="quotation_delivery" string="Delivery">
+                            <field name="coefficient_delivery_weight"/>
+                        </group>
+                    </group>
+                    <group name="quotation_commissions" string="Commissions">
+                        <field name="quotation_commission_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="template_id" invisible="1"/>
+                                <field name="discount_id" required="1"/>
+                                <field name="commission" string="Commission (%)"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

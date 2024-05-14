@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alq_sale_quotation_management_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-08 12:30+0000\n"
+"PO-Revision-Date: 2024-05-08 12:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_generate_sale_quotation_wizard__lead_id
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_sale_quotation__lead_id
+msgid "CRM lead"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__construction_id
+#: model_terms:ir.ui.view,arch_db:alq_sale_quotation_management_crm.quotation_crm_lead_search_opportunity
+msgid "Construction"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.ui.menu,name:alq_sale_quotation_management_crm.construction_construction_menu
+msgid "Constructions"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model,name:alq_sale_quotation_management_crm.model_generate_sale_quotation_wizard
+msgid "Generate Sale Quotation Wizard"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model,name:alq_sale_quotation_management_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__next_subsequence
+msgid "Next subsequence"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__next_version
+msgid "Next version"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__quotation_count
+msgid "Number of Quotations"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__sale_order_count
+msgid "Number of Sale Orders"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__operating_unit_id
+msgid "Operating Unit"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__operating_unit_blocked
+msgid "Operating unit blocked"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__quotation_sequence
+msgid "Quotation sequence"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__quotation_ids
+msgid "Quotations"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model,name:alq_sale_quotation_management_crm.model_sale_quotation
+msgid "Sale Quotation"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: code:addons/alq_sale_quotation_management_crm/models/crm.py:0
+#, python-format
+msgid "Sale quotations"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_generate_sale_quotation_wizard__smart_search
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_sale_quotation__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,field_description:alq_sale_quotation_management_crm.field_crm_lead__sale_amount_total
+msgid "Sum of Orders"
+msgstr ""
+
+#. module: alq_sale_quotation_management_crm
+#: model:ir.model.fields,help:alq_sale_quotation_management_crm.field_crm_lead__sale_amount_total
+msgid "Untaxed Total of Confirmed Orders"
+msgstr ""
+

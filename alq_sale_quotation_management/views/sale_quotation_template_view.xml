@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="sale_quotation_template_form" model="ir.ui.view">
+        <field name="name">sale.quotation.template.form</field>
+        <field name="model">sale.quotation.template</field>
+        <field name="arch" type="xml">
+            <form string="Quotation template">
+                <sheet>
+                    <div class="oe_title" name="title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group name="info">
+                        <group name="general_info">
+                            <field name="code"/>
+                            <field name="type_id" required="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="measure" invisible="1"/>
+                            <field name="thickness_measure" invisible="1"/>
+                            <field name="business_line_ids" required="1" widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="expiration_days"/>
+                        </group>
+                        <group name="other_info"></group>
+                    </group>
+                    <group name="field_options" string="Fields options">
+                        <group name="field_surface_options">
+                            <field name="surface_show_field" invisible="1"/>
+                            <field name="surface_options" attrs="{'invisible': [('surface_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_surface_value">
+                            <label for="surface_default_value" attrs="{'invisible': [('surface_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_surface_default_value" attrs="{'invisible': [('surface_show_field', '=', False)]}">
+                                <field name="surface_default_value"/>
+                                <span>m²</span>
+                            </div>
+                        </group>
+                        <group name="field_thickness_options">
+                            <field name="thickness_show_field" invisible="1"/>
+                            <field name="thickness_options" attrs="{'invisible': [('thickness_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_thickness_value">
+                            <label for="thickness_default_value" attrs="{'invisible': [('thickness_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_thickness_default_value" attrs="{'invisible': [('thickness_show_field', '=', False)]}">
+                                <field name="thickness_default_value"/>
+                                <span attrs="{'invisible': [('thickness_measure', '!=', 'cm')]}">cm</span>
+                                <span attrs="{'invisible': [('thickness_measure', '!=', 'mm')]}">mm</span>
+                            </div>
+                        </group>
+                        <group name="field_perimeter_options">
+                            <field name="perimeter_show_field" invisible="1"/>
+                            <field name="perimeter_options" attrs="{'invisible': [('perimeter_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_perimeter_value">
+                            <label for="perimeter_default_value" attrs="{'invisible': [('perimeter_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_perimeter_default_value" attrs="{'invisible': [('perimeter_show_field', '=', False)]}">
+                                <field name="perimeter_default_value"/>
+                                <span>m</span>
+                            </div>
+                        </group>
+                        <group name="field_length_options">
+                            <field name="length_show_field" invisible="1"/>
+                            <field name="length_options" attrs="{'invisible': [('length_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_length_value">
+                            <label for="length_default_value" attrs="{'invisible': [('length_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_length_default_value" attrs="{'invisible': [('length_show_field', '=', False)]}">
+                                <field name="length_default_value"/>
+                                <span>m</span>
+                            </div>
+                        </group>
+                        <group name="field_width_options">
+                            <field name="width_show_field" invisible="1"/>
+                            <field name="width_options" attrs="{'invisible': [('width_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_width_value">
+                            <label for="width_default_value" attrs="{'invisible': [('width_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_width_default_value" attrs="{'invisible': [('width_show_field', '=', False)]}">
+                                <field name="width_default_value"/>
+                                <span>m</span>
+                            </div>
+                        </group>
+                        <group name="field_efficiency_options">
+                            <field name="efficiency_show_field" invisible="1"/>
+                            <field name="efficiency_options" attrs="{'invisible': [('efficiency_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_efficiency_value">
+                            <label for="efficiency_default_value" attrs="{'invisible': [('efficiency_show_field', '=', False)]}"/>
+                            <div class="o_row" name="div_efficiency_default_value" attrs="{'invisible': [('efficiency_show_field', '=', False)]}">
+                                <field name="efficiency_default_value"/>
+                                <span attrs="{'invisible': [('measure', '!=', 'linear')]}">m/day</span>
+                                <span attrs="{'invisible': [('measure', '!=', 'square')]}">m²/day</span>
+                            </div>
+                        </group>
+                        <group name="field_days_options">
+                            <field name="days_show_field" invisible="1"/>
+                            <field name="days_options" attrs="{'invisible': [('days_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_days_value">
+                            <field name="days_default_value" attrs="{'invisible': [('days_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_workers_options">
+                            <field name="workers_show_field" invisible="1"/>
+                            <field name="workers_options" attrs="{'invisible': [('workers_show_field', '=', False)]}"/>
+                        </group>
+                        <group name="field_workers_value">
+                            <field name="workers_default_value" attrs="{'invisible': [('workers_show_field', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="page_lines" string="Lines">
+                            <field name="line_ids" context="{'default_measure': measure, 'default_template_id': active_id, 'default_thickness_measure': thickness_measure}">
+                                <form string="Quotation template line">
+                                    <div class="oe_title" name="line_title">
+                                        <label for="name"/>
+                                        <h1>
+                                            <field name="name"/>
+                                        </h1>
+                                    </div>
+                                    <group name="line_info" attrs="{'invisible': [('display_type', '=', 'line_section')]}">
+                                        <group name="line_general_info">
+                                            <field name="group_id"/>
+                                            <field name="required_line"/>
+                                            <field name="weight_delivery"/>
+                                            <field name="weight_waste"/>
+                                            <field name="is_reference_line"/>
+                                            <field name="editable_name"/>
+                                        </group>
+                                        <group name="line_other_info">
+                                            <field name="sequence" invisible="1"/>
+                                            <field name="display_type" invisible="1"/>
+                                            <field name="template_id" invisible="1"/>
+                                            <field name="measure" invisible="1"/>
+                                            <field name="thickness_measure" invisible="1"/>
+                                            <field name="business_line_ids" invisible="1"/>
+                                            <field name="header_thickness_show_field" invisible="1"/>
+                                            <field name="header_surface_show_field" invisible="1"/>
+                                            <field name="header_perimeter_show_field" invisible="1"/>
+                                            <field name="header_length_show_field" invisible="1"/>
+                                            <field name="header_width_show_field" invisible="1"/>
+                                            <field name="header_efficiency_show_field" invisible="1"/>
+                                            <field name="header_days_show_field" invisible="1"/>
+                                            <field name="header_workers_show_field" invisible="1"/>
+                                        </group>
+                                    </group>
+                                    <group name="line_price_configuration" string="Price options" attrs="{'invisible': [('display_type', '=', 'line_section')]}">
+                                        <group name="line_max_discount_options">
+                                            <field name="max_discount" invisible="1"/>
+                                            <field name="discount_ids" string="Allowed discounts" required="1" widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </group>
+                                        <group name="line_max_discount_empty"></group>
+                                        <group name="line_min_price_unit_options">
+                                            <label for="min_price_unit"/>
+                                            <div class="o_row" name="min_price_unit">
+                                                <field name="min_price_unit"/>
+                                                <span>€</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_min_price_unit_empty"></group>
+                                        <group name="line_priority_price_options">
+                                            <field name="priority_price"/>
+                                        </group>
+                                        <group name="line_priority_price_empty"></group>
+                                        <group name="line_price_unit_options">
+                                            <field name="price_unit_options"/>
+                                        </group>
+                                        <group name="line_price_unit_value">
+                                            <label for="price_unit_default_value"/>
+                                            <div class="o_row" name="div_line_price_unit_default_value">
+                                                <field name="price_unit_default_value"/>
+                                                <span>€</span>
+                                            </div>
+                                        </group>
+                                    </group>
+                                    <group name="line_product_configuration" attrs="{'invisible': [('display_type', '=', 'line_section')]}">
+                                        <group name="line_product_configuration_domain" string="Product domain">
+                                            <field name="product_domain" nolabel="1" placeholder="Select product" widget="domain" options="{'model': 'product.product', 'in_dialog': True}"/>
+                                        </group>
+                                        <group name="line_product_configuration_default" string="Default product">
+                                            <field name="default_product_id" nolabel="1" options="{'no_open': True, 'no_create': True}"/>
+                                        </group>
+                                    </group>
+                                    <group name="line_field_options" string="Fields options" attrs="{'invisible': [('display_type', '=', 'line_section')]}">
+                                        <group name="line_field_thickness_options">
+                                            <field name="thickness_show_field" invisible="1"/>
+                                            <field name="thickness_options" attrs="{'invisible': [('thickness_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_thickness_value">
+                                            <label for="thickness_default_value" attrs="{'invisible': [('thickness_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_thickness_default_value" attrs="{'invisible': [('thickness_show_field', '=', False)]}">
+                                                <field name="thickness_default_value"/>
+                                                <span attrs="{'invisible': [('thickness_measure', '!=', 'cm')]}">cm</span>
+                                                <span attrs="{'invisible': [('thickness_measure', '!=', 'mm')]}">mm</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_field_dosage_options">
+                                            <field name="dosage_show_field" invisible="1"/>
+                                            <field name="dosage_options" attrs="{'invisible': [('dosage_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_dosage_value">
+                                            <field name="dosage_default_value" attrs="{'invisible': [('dosage_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_usage_options">
+                                            <field name="usage_show_field" invisible="1"/>
+                                            <field name="usage_options" attrs="{'invisible': [('usage_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_usage_value">
+                                            <field name="usage_default_value" attrs="{'invisible': [('usage_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_coefficient_options">
+                                            <field name="coefficient_show_field" invisible="1"/>
+                                            <field name="coefficient_options" attrs="{'invisible': [('coefficient_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_coefficient_value">
+                                            <field name="coefficient_default_value" attrs="{'invisible': [('coefficient_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_surface_options">
+                                            <field name="surface_show_field" invisible="1"/>
+                                            <field name="surface_options" attrs="{'invisible': [('surface_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_surface_value">
+                                            <label for="surface_default_value" attrs="{'invisible': [('surface_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_surface_default_value" attrs="{'invisible': [('surface_show_field', '=', False)]}">
+                                                <field name="surface_default_value"/>
+                                                <span>m²</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_field_length_options">
+                                            <field name="length_show_field" invisible="1"/>
+                                            <field name="length_options" attrs="{'invisible': [('length_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_length_value">
+                                            <label for="length_default_value" attrs="{'invisible': [('length_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_length_default_value" attrs="{'invisible': [('length_show_field', '=', False)]}">
+                                                <field name="length_default_value"/>
+                                                <span>m</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_field_units_options">
+                                            <field name="units_show_field" invisible="1"/>
+                                            <field name="units_options" attrs="{'invisible': [('units_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_units_value">
+                                            <field name="units_default_value" attrs="{'invisible': [('units_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_efficiency_options">
+                                            <field name="efficiency_show_field" invisible="1"/>
+                                            <field name="efficiency_options" attrs="{'invisible': [('efficiency_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_efficiency_value">
+                                            <label for="efficiency_default_value" attrs="{'invisible': [('efficiency_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_efficiency_default_value" attrs="{'invisible': [('efficiency_show_field', '=', False)]}">
+                                                <field name="efficiency_default_value"/>
+                                                <span attrs="{'invisible': [('measure', '!=', 'linear')]}">m/day</span>
+                                                <span attrs="{'invisible': [('measure', '!=', 'square')]}">m²/day</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_field_width_options">
+                                            <field name="width_show_field" invisible="1"/>
+                                            <field name="width_options" attrs="{'invisible': [('width_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_width_value">
+                                            <label for="width_default_value" attrs="{'invisible': [('width_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_width_default_value" attrs="{'invisible': [('width_show_field', '=', False)]}">
+                                                <field name="width_default_value"/>
+                                                <span>m</span>
+                                            </div>
+                                        </group>
+                                        <group name="line_field_height_options">
+                                            <field name="height_show_field" invisible="1"/>
+                                            <field name="height_options" attrs="{'invisible': [('height_show_field', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_field_height_value">
+                                            <label for="height_default_value" attrs="{'invisible': [('height_show_field', '=', False)]}"/>
+                                            <div class="o_row" name="div_line_height_default_value" attrs="{'invisible': [('height_show_field', '=', False)]}">
+                                                <field name="height_default_value"/>
+                                                <span>m</span>
+                                            </div>
+                                        </group>
+                                    </group>
+                                    <group name="line_formulas">
+                                        <group name="line_formula_options" string="Formula options">
+                                            <field name="formula_quantity_editable"/>
+                                            <field name="formula_price_total_editable"/>
+                                            <div class="oe_inline o_td_label" name="div_line_formula_price_distributed_editable_label">
+                                                <label for="formula_price_distributed_editable" string="Formula editable: Price/m" attrs="{'invisible': [('measure', '!=', 'linear')]}"/>
+                                                <label for="formula_price_distributed_editable" string="Formula editable: Price/m²" attrs="{'invisible': [('measure', '!=', 'square')]}"/>
+                                            </div>
+                                            <field name="formula_price_distributed_editable" nolabel="1"/>
+                                        </group>
+                                        <group name="line_formula_quantity" string="Formula: Quantity">
+                                            <field name="formula_quantity" nolabel="1" force_save="1" attrs="{'readonly': [('formula_quantity_editable', '=', False)]}"/>
+                                        </group>
+                                        <group name="line_formula_price_total" string="Formula: Price total">
+                                            <field name="formula_price_total" nolabel="1" force_save="1" attrs="{'readonly': [('formula_price_total_editable', '=', False)]}"/>
+                                        </group>
+                                        <group name="formula_price_distributed" string="Formula: Price/m" attrs="{'invisible': [('measure', '!=', 'linear')]}">
+                                            <field name="formula_price_distributed" nolabel="1" force_save="1" attrs="{'readonly': [('formula_price_distributed_editable', '=', False)]}"/>
+                                        </group>
+                                        <group name="formula_price_distributed" string="Formula: Price/m²" attrs="{'invisible': [('measure', '!=', 'square')]}">
+                                            <field name="formula_price_distributed" nolabel="1" force_save="1" attrs="{'readonly': [('formula_price_distributed_editable', '=', False)]}"/>
+                                        </group>
+                                    </group>
+                                    <div class="row" name="legend_group">
+                                        <div class="col-md-12" name="legend_text_group">
+                                            <div class="o_horizontal_separator mb-3 mt-4 text-uppercase fw-bolder small" name="legend_text">Legend for formula operations</div>
+                                            <div>You can define a variable and use it in the formula with a name not used in the following predefined variables:</div>
+                                        </div>
+                                        <div class="col-md-7" name="legend_general_group">
+                                            <div class="mb-3 mt-4 text-uppercase fw-bolder small" name="legend_general_fields">Result and functions</div>
+                                            <div name="legend_general_result">result -> Formula operation result</div>
+                                            <div>ceil() -> Function to obtain the following integer</div>
+                                            <div>header.get_line_by_name("NAME") -> Function to obtain a line by name</div>
+                                            <div>header.get_special_delivery_weight() -> Function to obtain the special delivery weight</div>
+                                            <div attrs="{'invisible': [('display_type', '!=', 'line_section')]}">line.get_price_total_section() -> Function to obtain the section total price</div>
+                                            <div attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('measure', '!=', 'linear')]}">line.get_price_distributed_section() -> Function to obtain the section price/m</div>
+                                            <div attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('measure', '!=', 'square')]}">line.get_price_distributed_section() -> Function to obtain the section price/m²</div>
+                                            <br/>
+                                            <div class="mb-3 mt-4 text-uppercase fw-bolder small" name="legend_header_fields">Header fields</div>
+                                            <div>header.delivery_weight -> Delivery weight (kg)</div>
+                                            <div>header.waste_weight -> Weight for waste management (kg)</div>
+                                            <div>header.total_weight -> Total weight (kg)</div>
+                                            <div attrs="{'invisible': ['|', ('header_thickness_show_field', '=', False), ('thickness_measure', '!=', 'cm')]}">header.thickness -> Total thickness (cm)</div>
+                                            <div attrs="{'invisible': ['|', ('header_thickness_show_field', '=', False), ('thickness_measure', '!=', 'mm')]}">header.thickness -> Total thickness (mm)</div>
+                                            <div attrs="{'invisible': [('header_surface_show_field', '=', False)]}">header.surface -> Total surface (m²)</div>
+                                            <div attrs="{'invisible': [('header_perimeter_show_field', '=', False)]}">header.perimeter -> Total perimeter (m)</div>
+                                            <div attrs="{'invisible': [('header_length_show_field', '=', False)]}">header.length -> Total length (m)</div>
+                                            <div attrs="{'invisible': [('header_width_show_field', '=', False)]}">header.width -> Total width (m)</div>
+                                            <div attrs="{'invisible': ['|', ('header_efficiency_show_field', '=', False), ('measure', '!=', 'linear')]}">header.efficiency -> Efficiency (m/day)</div>
+                                            <div attrs="{'invisible': ['|', ('header_efficiency_show_field', '=', False), ('measure', '!=', 'square')]}">header.efficiency -> Efficiency (m²/day)</div>
+                                            <div attrs="{'invisible': [('header_days_show_field', '=', False)]}">header.days -> Days</div>
+                                            <div attrs="{'invisible': [('header_workers_show_field', '=', False)]}">header.workers -> Workers</div>
+                                        </div>
+                                        <div class="col-md-5" name="legend_line_group">
+                                            <div class="mb-3 mt-4 text-uppercase fw-bolder small" name="legend_line_fields">Line fields</div>
+                                            <div>line.price_unit -> Product price unit (€)</div>
+                                            <div>line.weight -> Product weight (kg)</div>
+                                            <div>line.discount -> Discount (%)</div>
+                                            <div>line.quantity -> Calculed quantity</div>
+                                            <div attrs="{'invisible': ['|', ('thickness_show_field', '=', False), ('thickness_measure', '!=', 'cm')]}">line.thickness -> Thickness (cm)</div>
+                                            <div attrs="{'invisible': ['|', ('thickness_show_field', '=', False), ('thickness_measure', '!=', 'mm')]}">line.thickness -> Thickness (mm)</div>
+                                            <div attrs="{'invisible': [('dosage_show_field', '=', False)]}">line.dosage -> Dosage</div>
+                                            <div attrs="{'invisible': [('usage_show_field', '=', False)]}">line.usage -> Usage</div>
+                                            <div attrs="{'invisible': [('coefficient_show_field', '=', False)]}">line.coefficient -> Coefficient</div>
+                                            <div attrs="{'invisible': [('surface_show_field', '=', False)]}">line.surface -> Surface (m²)</div>
+                                            <div attrs="{'invisible': [('length_show_field', '=', False)]}">line.length -> Length (m)</div>
+                                            <div attrs="{'invisible': [('units_show_field', '=', False)]}">line.units -> Units</div>
+                                            <div attrs="{'invisible': ['|', ('efficiency_show_field', '=', False), ('measure', '!=', 'linear')]}">line.efficiency -> Efficiency (m/day)</div>
+                                            <div attrs="{'invisible': ['|', ('efficiency_show_field', '=', False), ('measure', '!=', 'square')]}">line.efficiency -> Efficiency (m²/day)</div>
+                                            <div attrs="{'invisible': [('width_show_field', '=', False)]}">line.width -> Width (m)</div>
+                                            <div attrs="{'invisible': [('height_show_field', '=', False)]}">line.height -> Height (m)</div>
+                                            <br/>
+                                            <div class="mb-3 mt-4 text-uppercase fw-bolder small" name="legend_product_fields">Product fields</div>
+                                            <div>product.work_price -> Work price (€)</div>
+                                            <div>product.major_dividend -> Major dividend</div>
+                                            <div>product.minor_dividend -> Minor dividend</div>
+                                            <div>product.work_price_minimum -> Minimum work price (€)</div>
+                                            <div>product.efficiency_umbral -> Efficiency umbral</div>
+                                            <div>product.minimum_workers -> Minimum number of workers</div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <tree limit="1000" decoration-bf="display_type == 'line_section'" class="quotation-tree">
+                                    <control>
+                                        <create name="add_line_control" string="Add new line"/>
+                                        <create name="add_section_control" string="Add new section" context="{'default_display_type': 'line_section'}"/>
+                                    </control>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="display_type" invisible="1"/>
+                                    <button name="copy_line" type="object" icon="fa-plus" confirm="Are you sure you want to duplicate the line?"/>
+                                    <field name="name"/>
+                                    <field name="max_discount" optional="hide"/>
+                                    <field name="discount_ids" invisible="1"/>
+                                    <field name="min_price_unit" optional="hide"/>
+                                    <field name="priority_price" optional="hide"/>
+                                    <field name="price_unit_options" invisible="1"/>
+                                    <field name="price_unit_default_value" invisible="1"/>
+                                    <field name="group_id" optional="hide"/>
+                                    <field name="required_line" optional="hide"/>
+                                    <field name="weight_delivery" optional="hide"/>
+                                    <field name="weight_waste" optional="hide"/>
+                                    <field name="is_reference_line" optional="hide"/>
+                                    <field name="editable_name" optional="hide"/>
+                                    <field name="product_domain" invisible="1"/>
+                                    <field name="default_product_id" invisible="1"/>
+                                    <field name="header_thickness_show_field" invisible="1"/>
+                                    <field name="header_surface_show_field" invisible="1"/>
+                                    <field name="header_perimeter_show_field" invisible="1"/>
+                                    <field name="header_length_show_field" invisible="1"/>
+                                    <field name="header_width_show_field" invisible="1"/>
+                                    <field name="header_efficiency_show_field" invisible="1"/>
+                                    <field name="header_days_show_field" invisible="1"/>
+                                    <field name="header_workers_show_field" invisible="1"/>
+                                    <field name="thickness_default_value" invisible="1"/>
+                                    <field name="thickness_show_field" invisible="1"/>
+                                    <field name="thickness_options" invisible="1"/>
+                                    <field name="dosage_default_value" invisible="1"/>
+                                    <field name="dosage_show_field" invisible="1"/>
+                                    <field name="dosage_options" invisible="1"/>
+                                    <field name="usage_default_value" invisible="1"/>
+                                    <field name="usage_show_field" invisible="1"/>
+                                    <field name="usage_options" invisible="1"/>
+                                    <field name="coefficient_default_value" invisible="1"/>
+                                    <field name="coefficient_show_field" invisible="1"/>
+                                    <field name="coefficient_options" invisible="1"/>
+                                    <field name="surface_default_value" invisible="1"/>
+                                    <field name="surface_show_field" invisible="1"/>
+                                    <field name="surface_options" invisible="1"/>
+                                    <field name="length_default_value" invisible="1"/>
+                                    <field name="length_show_field" invisible="1"/>
+                                    <field name="length_options" invisible="1"/>
+                                    <field name="units_default_value" invisible="1"/>
+                                    <field name="units_show_field" invisible="1"/>
+                                    <field name="units_options" invisible="1"/>
+                                    <field name="efficiency_default_value" invisible="1"/>
+                                    <field name="efficiency_show_field" invisible="1"/>
+                                    <field name="efficiency_options" invisible="1"/>
+                                    <field name="width_show_field" invisible="1"/>
+                                    <field name="width_options" invisible="1"/>
+                                    <field name="width_default_value" invisible="1"/>
+                                    <field name="height_show_field" invisible="1"/>
+                                    <field name="height_options" invisible="1"/>
+                                    <field name="height_default_value" invisible="1"/>
+                                    <field name="formula_quantity_editable" invisible="1"/>
+                                    <field name="formula_quantity" invisible="1"/>
+                                    <field name="formula_price_total_editable" invisible="1"/>
+                                    <field name="formula_price_total" invisible="1"/>
+                                    <field name="formula_price_distributed_editable" invisible="1"/>
+                                    <field name="formula_price_distributed" invisible="1"/>
+                                    <field name="template_id" invisible="1"/>
+                                    <field name="measure" invisible="1"/>
+                                    <field name="thickness_measure" invisible="1"/>
+                                    <field name="business_line_ids" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="page_other_info" string="Other information">
+                            <group name="main_other_info">
+                                <group name="sale_info">
+                                    <field name="sale_product_id" domain="[('detailed_type', '=', 'service')]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="sale_distributed_product_id" required="1" domain="[('detailed_type', '=', 'service')]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="sale_by_sections"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="page_note" string="Terms and conditions">
+                            <group name="main_note">
+                                <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_search" model="ir.ui.view">
+        <field name="name">sale.quotation.template.search</field>
+        <field name="model">sale.quotation.template</field>
+        <field name="arch" type="xml">
+            <search string="Quotation templates">
+                <field name="name"/>
+                <field name="business_line_ids"/>
+                <group expand="0" string="Group by">
+                    <filter string="Business line" name="groupby_business_line" domain="[]" context="{'group_by': 'business_line_ids'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.tree</field>
+        <field name="model">sale.quotation.template</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation templates">
+                <field name="name"/>
+                <field name="code" optional="hide"/>
+                <field name="type_id" optional="show"/>
+                <field name="measure" invisible="1"/>
+                <field name="thickness_measure" invisible="1"/>
+                <field name="business_line_ids" optional="show" widget="many2many_tags"/>
+                <field name="expiration_days" optional="hide"/>
+                <field name="sale_product_id" optional="hide"/>
+                <field name="sale_distributed_product_id" optional="hide"/>
+                <field name="sale_by_sections" optional="hide"/>
+                <field name="surface_show_field" invisible="1"/>
+                <field name="surface_options" optional="hide"/>
+                <field name="surface_default_value" optional="hide"/>
+                <field name="thickness_show_field" invisible="1"/>
+                <field name="thickness_options" optional="hide"/>
+                <field name="thickness_default_value" optional="hide"/>
+                <field name="perimeter_show_field" invisible="1"/>
+                <field name="perimeter_options" optional="hide"/>
+                <field name="perimeter_default_value" optional="hide"/>
+                <field name="length_show_field" invisible="1"/>
+                <field name="length_options" optional="hide"/>
+                <field name="length_default_value" optional="hide"/>
+                <field name="width_show_field" invisible="1"/>
+                <field name="width_options" optional="hide"/>
+                <field name="width_default_value" optional="hide"/>
+                <field name="efficiency_show_field" invisible="1"/>
+                <field name="efficiency_options" optional="hide"/>
+                <field name="efficiency_default_value" optional="hide"/>
+                <field name="days_show_field" invisible="1"/>
+                <field name="days_options" optional="hide"/>
+                <field name="days_default_value" optional="hide"/>
+                <field name="workers_show_field" invisible="1"/>
+                <field name="workers_options" optional="hide"/>
+                <field name="workers_default_value" optional="hide"/>
+                <field name="note" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_action" model="ir.actions.act_window">
+        <field name="name">Quotation templates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sale_quotation_template_tree"/>
+        <field name="search_view_id" ref="sale_quotation_template_search"/>
+        <field name="context">{'search_default_groupby_business_line': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation template.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_quotation_template_menu"
+              name="Quotation templates"
+              action="sale_quotation_template_action"
+              parent="sale.menu_sales_config"
+              sequence="100"/>
+
+    <record id="sale_quotation_template_line_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.line.tree</field>
+        <field name="model">sale.quotation.template.line</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation template lines" editable="bottom" create="0" delete="0" edit="0">
+                <field name="template_id" optional="show"/>
+                <field name="business_line_ids" invisible="1"/>
+                <field name="measure" invisible="1"/>
+                <field name="thickness_measure" invisible="1"/>
+                <field name="sequence" optional="show"/>
+                <field name="display_type" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="max_discount" optional="hide"/>
+                <field name="discount_ids" optional="hide"/>
+                <field name="min_price_unit" optional="hide"/>
+                <field name="priority_price" optional="hide"/>
+                <field name="price_unit_options" optional="hide"/>
+                <field name="price_unit_default_value" optional="hide"/>
+                <field name="required_line" optional="hide"/>
+                <field name="weight_delivery" optional="hide"/>
+                <field name="weight_waste" optional="hide"/>
+                <field name="is_reference_line" optional="hide"/>
+                <field name="editable_name" optional="hide"/>
+                <field name="product_domain" optional="hide"/>
+                <field name="default_product_id" optional="hide"/>
+                <field name="header_thickness_show_field" invisible="1"/>
+                <field name="header_surface_show_field" invisible="1"/>
+                <field name="header_perimeter_show_field" invisible="1"/>
+                <field name="header_length_show_field" invisible="1"/>
+                <field name="header_width_show_field" invisible="1"/>
+                <field name="header_efficiency_show_field" invisible="1"/>
+                <field name="header_days_show_field" invisible="1"/>
+                <field name="header_workers_show_field" invisible="1"/>
+                <field name="thickness_show_field" invisible="1"/>
+                <field name="thickness_options" optional="hide"/>
+                <field name="thickness_default_value" optional="hide"/>
+                <field name="dosage_show_field" invisible="1"/>
+                <field name="dosage_options" optional="hide"/>
+                <field name="dosage_default_value" optional="hide"/>
+                <field name="usage_show_field" invisible="1"/>
+                <field name="usage_options" optional="hide"/>
+                <field name="usage_default_value" optional="hide"/>
+                <field name="coefficient_show_field" invisible="1"/>
+                <field name="coefficient_options" optional="hide"/>
+                <field name="coefficient_default_value" optional="hide"/>
+                <field name="surface_show_field" invisible="1"/>
+                <field name="surface_options" optional="hide"/>
+                <field name="surface_default_value" optional="hide"/>
+                <field name="length_show_field" invisible="1"/>
+                <field name="length_options" optional="hide"/>
+                <field name="length_default_value" optional="hide"/>
+                <field name="units_show_field" invisible="1"/>
+                <field name="units_options" optional="hide"/>
+                <field name="units_default_value" optional="hide"/>
+                <field name="efficiency_show_field" invisible="1"/>
+                <field name="efficiency_options" optional="hide"/>
+                <field name="efficiency_default_value" optional="hide"/>
+                <field name="width_show_field" invisible="1"/>
+                <field name="width_options" optional="hide"/>
+                <field name="width_default_value" optional="hide"/>
+                <field name="height_show_field" invisible="1"/>
+                <field name="height_options" optional="hide"/>
+                <field name="height_default_value" optional="hide"/>
+                <field name="formula_quantity_editable" optional="hide"/>
+                <field name="formula_quantity" optional="hide"/>
+                <field name="formula_price_total_editable" optional="hide"/>
+                <field name="formula_price_total" optional="hide"/>
+                <field name="formula_price_distributed_editable" optional="hide"/>
+                <field name="formula_price_distributed" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_line_action" model="ir.actions.act_window">
+        <field name="name">Quotation template lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_quotation_template_line_tree"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="sale_quotation_template_line_menu"
+              name="Quotation template lines"
+              action="sale_quotation_template_line_action"
+              parent="sale.menu_sales_config"
+              sequence="110"/>
+
+    <record id="sale_quotation_template_type_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.type.tree</field>
+        <field name="model">sale.quotation.template.type</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation template types" editable="bottom">
+                <field name="name"/>
+                <field name="measure" required="1"/>
+                <field name="thickness_measure" required="1"/>
+                <field name="field_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_type_action" model="ir.actions.act_window">
+        <field name="name">Quotation template types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template.type</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_quotation_template_type_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation template type.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_quotation_template_type_menu"
+              name="Quotation template types"
+              action="sale_quotation_template_type_action"
+              parent="sale.menu_sales_config"
+              sequence="120"/>
+
+    <record id="sale_quotation_template_business_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.business.tree</field>
+        <field name="model">sale.quotation.template.business</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation template business lines" editable="bottom" create="1" delete="1" edit="1">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="root_analytic_account_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_business_action" model="ir.actions.act_window">
+        <field name="name">Quotation template business lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template.business</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_quotation_template_business_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation template business line.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_quotation_template_business_menu"
+              name="Quotation template business lines"
+              action="sale_quotation_template_business_action"
+              parent="sale.menu_sales_config"
+              sequence="130"/>
+
+    <record id="sale_quotation_template_field_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.field.tree</field>
+        <field name="model">sale.quotation.template.field</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation template fields" editable="bottom" create="1" delete="1" edit="1">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_field_action" model="ir.actions.act_window">
+        <field name="name">Quotation template fields</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template.field</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_quotation_template_field_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation template field.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_quotation_template_field_menu"
+              name="Quotation template fields"
+              action="sale_quotation_template_field_action"
+              parent="sale.menu_sales_config"
+              sequence="140"/>
+
+    <record id="sale_quotation_template_discount_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.template.discount.tree</field>
+        <field name="model">sale.quotation.template.discount</field>
+        <field name="arch" type="xml">
+            <tree string="Quotation template discounts" editable="bottom" create="1" delete="1" edit="1">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="discount"/>
+                <field name="default_discount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_quotation_template_discount_action" model="ir.actions.act_window">
+        <field name="name">Quotation template discounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.quotation.template.discount</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_quotation_template_discount_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new sale quotation template discount.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_quotation_template_discount_menu"
+              name="Quotation template discounts"
+              action="sale_quotation_template_discount_action"
+              parent="sale.menu_sales_config"
+              sequence="150"/>
+
+</odoo>

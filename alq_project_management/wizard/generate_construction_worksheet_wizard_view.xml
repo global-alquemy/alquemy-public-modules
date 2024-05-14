@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="generate_construction_worksheet_wizard_form" model="ir.ui.view">
+        <field name="name">generate.construction.worksheet.wizard.form</field>
+        <field name="model">generate.construction.worksheet.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Construction Worksheet">
+                <group name="general_info">
+                    <field name="project_id" invisible="1"/>
+                    <field name="date" required="1"/>
+                </group>
+                <group name="other_info">
+                    <group name="left_info">
+                        <field name="auto_employee_lines"/>
+                        <field name="consume_remaining_material"/>
+                    </group>
+                    <group name="right_info"></group>
+                </group>
+                <footer>
+                    <button name="generate_construction_worksheet" string="Generate construction worksheet" type="object" class="oe_highlight"/>
+                    <span>or</span>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

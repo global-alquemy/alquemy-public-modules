@@ -1,0 +1,1219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alq_project_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-08 12:30+0000\n"
+"PO-Revision-Date: 2024-05-08 12:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order_line_history__stock_picking_state
+msgid ""
+" * Draft: The transfer is not confirmed yet. Reservation doesn't apply.\n"
+" * Waiting another operation: This transfer is waiting for another operation before being ready.\n"
+" * Waiting: The transfer is waiting for the availability of some products.\n"
+"(a) The shipping policy is \"As soon as possible\": no product could be reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": not all the products could be reserved.\n"
+" * Ready: The transfer is ready to be processed.\n"
+"(a) The shipping policy is \"As soon as possible\": at least one product has been reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": all product have been reserved.\n"
+" * Done: The transfer has been processed.\n"
+" * Cancelled: The transfer has been cancelled."
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.generate_construction_worksheet_wizard_form
+msgid "<span>or</span>"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__action
+msgid "Action"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_needaction
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_exception_decoration
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_state
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_type_icon
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__all_pickings_count
+msgid "All pickings count"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__allowance_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__allowance_id
+msgid "Allowance"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__allowance_qty
+msgid "Allowance quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__analytic_account_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__analytic_account_id
+msgid "Analytic account"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Are you sure you want to confirm the construction worksheet?"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Are you sure you want to finish the collection order?"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Are you sure you want to process the collection lines?"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_attachment_count
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Back to draft"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.generate_construction_worksheet_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__chief_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_select
+msgid "Chief"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+msgid "Close construction"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_select
+msgid "Closed constructions"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Collection"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_collection_order
+msgid "Collection Order"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_collection_order_line
+msgid "Collection Order Line"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_collection_order_line_history
+msgid "Collection Order Line History"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/collection.py:0
+#, python-format
+msgid "Collection history line"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order_line__collection_notes
+msgid "Collection notes"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__collection_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__collection_id
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__collection_id
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order__collection_id
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_picking__collection_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Collection order"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__collection_line_id
+msgid "Collection order line"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_line_history_tree
+msgid "Collection order line history"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.actions.act_window,name:alq_project_management.collection_order_action
+#: model:ir.ui.menu,name:alq_project_management.collection_order_project_menu
+#: model:ir.ui.menu,name:alq_project_management.collection_order_purchase_menu
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_tree
+msgid "Collection orders"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__product_collection_ids
+msgid "Collection products"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__company_id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__company_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__company_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Company"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Confirm"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__construction_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__construction_id
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__construction_id
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order__construction_id
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_move__construction_id
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_picking__construction_id
+#: model:ir.ui.menu,name:alq_project_management.base_construction_menu
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_select
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_request_quotation_select
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_stock_move_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_stock_picking_internal_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Construction"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_construction_worksheet
+msgid "Construction Worksheet"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_construction_worksheet_line
+msgid "Construction Worksheet Line"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_construction_worksheet_material
+msgid "Construction Worksheet Material"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Construction address"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__construction_closed
+msgid "Construction closed"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__construction_location_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__construction_location_id
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__construction_location_id
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order__construction_location_id
+msgid "Construction location"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__construction_team_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_select
+msgid "Construction team"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__construction_warehouse_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__construction_warehouse_id
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__construction_warehouse_id
+msgid "Construction warehouse"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "Construction warehouse not selected."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/wizard/generate_construction_worksheet_wizard.py:0
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__worksheet_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__worksheet_id
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_picking__worksheet_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+#, python-format
+msgid "Construction worksheet"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/project.py:0
+#: model:ir.actions.act_window,name:alq_project_management.construction_worksheet_action
+#: model:ir.ui.menu,name:alq_project_management.construction_worksheet_menu
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_tree
+#, python-format
+msgid "Construction worksheets"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__consume_remaining_material
+msgid "Consume remaining material"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.actions.act_window,help:alq_project_management.collection_order_action
+msgid "Create a new collection order."
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.actions.act_window,help:alq_project_management.construction_worksheet_action
+msgid "Create a new construction worksheet."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__create_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__create_date
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__currency_id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/project.py:0
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+#, python-format
+msgid "Current stock"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_tree
+msgid "Customer"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "Customer location not found."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__date
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__date
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Date"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__partner_shipping_id
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__partner_shipping_id
+msgid "Delivery address"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Description"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__display_name
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order__state__done
+#: model:ir.model.fields.selection,name:alq_project_management.selection__construction_worksheet__state__done
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Done"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__done_qty
+msgid "Done quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order__state__draft
+#: model:ir.model.fields.selection,name:alq_project_management.selection__construction_worksheet__state__draft
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Draft"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__employee_id
+msgid "Employee"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__auto_employee_lines
+msgid "Employee lines auto-generation"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__employee_ids
+msgid "Employees"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__end_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__end_date
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "End date"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Finish"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_follower_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_partner_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__activity_type_icon
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__force_hours
+msgid "Force hours"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.generate_construction_worksheet_wizard_form
+msgid "Generate Construction Worksheet"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_generate_construction_worksheet_wizard
+msgid "Generate Construction Worksheet Wizard"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.generate_construction_worksheet_wizard_form
+msgid "Generate construction worksheet"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Group by"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__has_message
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__history_ids
+msgid "History lines"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__hours
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__hours
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Hours"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__id
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_exception_icon
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__activity_exception_icon
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_needaction
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_unread
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_needaction
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_has_error
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order__state__in_progress
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "In progress"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__internal_notes
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__internal_notes
+msgid "Internal notes"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Internal notes..."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_stock_location
+msgid "Inventory Locations"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_is_follower
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_product_product__is_allowance
+#: model:ir.model.fields,field_description:alq_project_management.field_product_template__is_allowance
+msgid "Is allowance"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__is_construction
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_location__is_construction
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_warehouse__is_construction
+msgid "Is construction"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_product_product__is_generic
+#: model:ir.model.fields,field_description:alq_project_management.field_product_template__is_generic
+msgid "Is generic"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material____last_update
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__write_uid
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__write_date
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__line_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__line_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Lines"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__location_id
+msgid "Location"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__product_location_ids
+msgid "Locations"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_main_attachment_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__material_control
+msgid "Material control"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__material_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+msgid "Materials"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_has_error
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__my_activity_date_deadline
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "My worksheets"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__name
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__name
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__name
+msgid "Name"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+msgid "New worksheet"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_calendar_event_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_date_deadline
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_summary
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_type_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__notes
+msgid "Notes"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_needaction_counter
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_has_error_counter
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_needaction_counter
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_has_error_counter
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__message_unread_counter
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_select
+msgid "Open constructions"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__operating_unit_id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__operating_unit_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__operating_unit_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Operating unit"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__owner_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Owner"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__partner_id
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_stock_picking_internal_search
+msgid "Pendings"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/collection.py:0
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "Picking type not found for selected warehouse."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#: code:addons/alq_project_management/models/project.py:0
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__picking_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_form
+#, python-format
+msgid "Pickings"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__pickings_count
+msgid "Pickings count"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/project.py:0
+#, python-format
+msgid "Please, check the construction stock before closing."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/project.py:0
+#, python-format
+msgid "Please, set an end date before closing."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__quotation_price_unit
+msgid "Price unit"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Process lines"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Process pending"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__product_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__product_id
+msgid "Product"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_project_project
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__project_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__project_id
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__project_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "Project"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order_line__action__purchase
+msgid "Purchase"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__purchase_order_id
+msgid "Purchase order"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__purchase_line_id
+msgid "Purchase order line"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__purchase_line_ids
+msgid "Purchase order lines"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__purchase_order_state
+msgid "Purchase order state"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/collection.py:0
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__purchase_order_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#, python-format
+msgid "Purchase orders"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__purchase_orders_count
+msgid "Purchase orders count"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__purchase_price_unit
+msgid "Purchase price unit"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__product_uom_qty
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__qty
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__product_uom_qty
+msgid "Quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__quotation_product_id
+msgid "Quotation product"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__quotation_qty
+msgid "Quotation quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+msgid "Reopen construction"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__required_qty
+msgid "Required quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_user_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order__state__revised
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Revised"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__revision_date
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Revision date"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Revision pending"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__sequence
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order_line_history__src_location_id
+msgid ""
+"Sets a location if you produce at a fixed location. This can be a partner "
+"location if you subcontract the manufacturing operations."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_generate_construction_worksheet_wizard__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_product_template__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_purchase_order_line__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_location__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_move__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_picking__smart_search
+#: model:ir.model.fields,field_description:alq_project_management.field_stock_warehouse__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__src_location_id
+msgid "Source location"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Start collection"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__start_date
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__start_date
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+msgid "Start date"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__state
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__state
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "State"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__activity_state
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__stock_move_id
+msgid "Stock move"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__stock_move_ids
+msgid "Stock moves"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__stock_picking_id
+msgid "Stock picking"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line_history__stock_picking_state
+msgid "Stock picking state"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/collection.py:0
+#: code:addons/alq_project_management/models/collection.py:0
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__all_picking_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__stock_picking_ids
+#, python-format
+msgid "Stock pickings"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__stock_pickings_count
+msgid "Stock pickings count"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Supplier"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__product_seller_ids
+msgid "Suppliers"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/collection.py:0
+#, python-format
+msgid "The following product is generic, please change it:"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__toxics
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__toxics
+msgid "Toxics"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_line__toxics_qty
+msgid "Toxics quantity"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_stock_picking
+#: model:ir.model.fields.selection,name:alq_project_management.selection__collection_order_line__action__transfer
+msgid "Transfer"
+msgstr ""
+
+#. module: alq_project_management
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_form
+msgid "Transfers"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__activity_exception_decoration
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_unread
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__message_unread_counter
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order_line__product_uom_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet_material__product_uom_id
+msgid "UoM"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__user_id
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__user_id
+#: model_terms:ir.ui.view,arch_db:alq_project_management.collection_order_search
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_worksheet_search
+msgid "User"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__vehicle_ids
+msgid "Vehicles"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model,name:alq_project_management.model_stock_warehouse
+msgid "Warehouse"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__website_message_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,help:alq_project_management.field_collection_order__website_message_ids
+#: model:ir.model.fields,help:alq_project_management.field_construction_worksheet__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__worksheet_picking_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+msgid "Worksheet pickings"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__worksheet_pickings_count
+msgid "Worksheet pickings count"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__worksheet_ids
+#: model_terms:ir.ui.view,arch_db:alq_project_management.construction_project_project_form
+msgid "Worksheets"
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_project_project__worksheets_count
+msgid "Worksheets count"
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "You can't delete a done construction worksheet."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/project.py:0
+#, python-format
+msgid "You can't delete construction project."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/wizard/generate_construction_worksheet_wizard.py:0
+#, python-format
+msgid "You must select a project."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "Zero or negative hours cannot be set."
+msgstr ""
+
+#. module: alq_project_management
+#: code:addons/alq_project_management/models/construction.py:0
+#, python-format
+msgid "Zero or negative quantities cannot be set."
+msgstr ""
+
+#. module: alq_project_management
+#: model:ir.model.fields,field_description:alq_project_management.field_collection_order__activity_team_user_ids
+#: model:ir.model.fields,field_description:alq_project_management.field_construction_worksheet__activity_team_user_ids
+msgid "test field"
+msgstr ""
+

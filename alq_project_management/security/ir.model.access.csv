@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_collection_order,collection.order,model_collection_order,base.group_user,1,1,1,1
+access_collection_order_line,collection.order.line,model_collection_order_line,base.group_user,1,1,1,1
+access_collection_order_line_history,collection.order.line.history,model_collection_order_line_history,base.group_user,1,1,1,1
+access_construction_worksheet,construction.worksheet,model_construction_worksheet,base.group_user,1,1,1,1
+access_construction_worksheet_line,construction.worksheet.line,model_construction_worksheet_line,base.group_user,1,1,1,1
+access_construction_worksheet_material,construction.worksheet.material,model_construction_worksheet_material,base.group_user,1,1,1,1
+access_generate_construction_worksheet_wizard,generate.construction.worksheet.wizard,model_generate_construction_worksheet_wizard,base.group_user,1,1,1,1

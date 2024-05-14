@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_generate_sale_quotation_wizard_form" model="ir.ui.view">
+        <field name="name">crm.generate.sale.quotation.wizard.form</field>
+        <field name="model">generate.sale.quotation.wizard</field>
+        <field name="inherit_id" ref="alq_sale_quotation_management.generate_sale_quotation_wizard_form"/>
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="lead_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="alq_sale_quotation_management.generate_sale_quotation_wizard_menu"
+              name="Generate sale quotation"
+              action="alq_sale_quotation_management.generate_sale_quotation_wizard_action"
+              parent="sale.sale_order_menu"
+              sequence="100"
+              active="False"/>
+
+</odoo>

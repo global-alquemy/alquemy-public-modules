@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="alq_sale_quotation_seq" model="ir.sequence">
+            <field name="name">Sale Quotation</field>
+            <field name="code">sale.quotation</field>
+            <field name="implementation">standard</field>
+            <field name="prefix">%(y)s-</field>
+            <field name="padding">4</field>
+            <field name="use_date_range" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

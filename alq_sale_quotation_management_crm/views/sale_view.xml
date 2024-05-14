@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="sale_crm.sale_order_menu_quotations_crm"
+              name="Quotations"
+              action="alq_sale_quotation_management.sale_quotation_action"
+              parent="crm.crm_menu_sales"
+              sequence="2"/>
+
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="project.open_view_project_all" model="ir.actions.act_window">
+        <field name="domain">[('is_internal_project', '=', False)]</field>
+        <field name="context">{'search_default_projects': True, 'search_default_filter_open_constructions': True}</field>
+        <field name="view_mode">tree,kanban,timeline,form</field>
+        <field name="view_id" ref="project.view_project"/>
+    </record>
+
+    <record id="project.open_view_project_all_group_stage" model="ir.actions.act_window">
+        <field name="domain">[('is_internal_project', '=', False)]</field>
+        <field name="context">{'search_default_projects': True, 'search_default_filter_open_constructions': True}</field>
+        <field name="view_mode">tree,kanban,timeline,form</field>
+        <field name="view_id" ref="project.view_project"/>
+    </record>
+
+    <record id="construction_project_project_form" model="ir.ui.view">
+        <field name="name">construction.project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <field name="label_tasks" position="before">
+                <field name="is_construction" readonly="1"/>
+                <field name="construction_closed" readonly="1" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+                <field name="construction_id" readonly="1" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+                <field name="construction_warehouse_id" readonly="1" domain="[('is_construction', '=', True)]" attrs="{'invisible': [('is_construction', '=', False)]}" options="{'no_open': True, 'no_create': True}"/>
+                <field name="construction_location_id" readonly="1" domain="[('is_construction', '=', True)]" attrs="{'invisible': [('is_construction', '=', False)]}" options="{'no_open': True, 'no_create': True}"/>
+                <field name="collection_id" readonly="1" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+            </field>
+            <header position="inside">
+                <button name="action_construction_worksheets_new" type="object" string="New worksheet" attrs="{'invisible': ['|', ('is_construction', '=', False), ('construction_closed', '=', True)]}"/>
+                <button name="action_close_construction_project" type="object" string="Close construction" attrs="{'invisible': ['|', ('is_construction', '=', False), ('construction_closed', '=', True)]}"/>
+                <button name="action_reopen_construction_project" type="object" string="Reopen construction" attrs="{'invisible': ['|', ('is_construction', '=', False), ('construction_closed', '=', False)]}"/>
+            </header>
+            <div name="button_box" position="inside">
+                <field name="worksheet_ids" invisible="1"/>
+                <button type="object" name="button_view_construction_worksheets" class="oe_stat_button" icon="fa-file-text-o" attrs="{'invisible': ['|', ('is_construction', '=', False), ('worksheet_ids', '=', [])]}">
+                    <field name="worksheets_count" widget="statinfo" string="Worksheets"/>
+                </button>
+                <button string="Current stock" name="button_view_current_stock" type="object" class="oe_stat_button" icon="fa-cubes" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+                <field name="worksheet_picking_ids" invisible="1"/>
+                <button name="button_view_worksheet_pickings" type="object" class="oe_stat_button" icon="fa-truck" attrs="{'invisible': ['|', ('is_construction', '=', False), ('worksheet_picking_ids', '=', [])]}">
+                    <field name="worksheet_pickings_count" widget="statinfo" string="Worksheet pickings"/>
+                </button>
+            </div>
+            <field name="partner_id" position="after">
+                <field name="partner_shipping_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': True, 'show_vat': False}" options="{'always_reload': True}" domain="[('parent_id', '=', partner_id), ('type', '=', 'delivery')]" attrs="{'invisible': [('is_construction', '=', False)], 'required': [('is_construction', '=', True)]}"/>
+            </field>
+            <field name="company_id" position="after">
+                <field name="construction_team_id" attrs="{'invisible': [('is_construction', '=', False)], 'required': [('is_construction', '=', True)]}"/>
+                <field name="chief_id" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+                <field name="employee_ids" widget="many2many_tags" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+                <field name="vehicle_ids" widget="many2many_tags" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="construction_project_project_select" model="ir.ui.view">
+        <field name="name">construction.project.project.select</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="construction_id"/>
+                <field name="construction_team_id"/>
+                <field name="chief_id"/>
+            </field>
+            <filter name="open" position="after">
+                <filter string="Open constructions" name="filter_open_constructions" domain="[('is_construction', '=', True), ('construction_closed', '=', False)]"/>
+                <filter string="Closed constructions" name="filter_closed_constructions" domain="[('is_construction', '=', True), ('construction_closed', '=', True)]"/>
+            </filter>
+            <group position="inside">
+                <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+                <filter string="Construction team" name="groupby_construction_team" domain="[]" context="{'group_by': 'construction_team_id'}"/>
+                <filter string="Chief" name="groupby_chief" domain="[]" context="{'group_by': 'chief_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="construction_project_project_tree" model="ir.ui.view">
+        <field name="name">construction.project.project.tree</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="construction_id" optional="show"/>
+                <field name="construction_team_id" optional="show"/>
+                <field name="chief_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

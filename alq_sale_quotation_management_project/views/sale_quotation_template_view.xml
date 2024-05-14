@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="project_sale_quotation_template_form" model="ir.ui.view">
+        <field name="name">project.sale.quotation.template.form</field>
+        <field name="model">sale.quotation.template</field>
+        <field name="inherit_id" ref="alq_sale_quotation_management.sale_quotation_template_form"/>
+        <field name="arch" type="xml">
+            <group name="main_other_info" position="inside">
+                <group name="project_info">
+                    <field name="template_project_id" domain="[('is_template', '=', True)]" options="{'no_open': True, 'no_create': True}"/>
+                </group>
+            </group>
+            <group name="line_general_info" position="inside">
+                <field name="is_project_labor"/>
+                <field name="material_control"/>
+            </group>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='is_reference_line']" position="after">
+                <field name="is_project_labor" optional="hide"/>
+                <field name="material_control" optional="hide"/>
+            </xpath>
+            <div name="legend_general_result" position="after">
+                <div name="legend_general_collection_qty">collection_qty -> Quantity for collection order</div>
+            </div>
+        </field>
+    </record>
+
+    <record id="project_sale_quotation_template_tree" model="ir.ui.view">
+        <field name="name">project.sale.quotation.template.tree</field>
+        <field name="model">sale.quotation.template</field>
+        <field name="inherit_id" ref="alq_sale_quotation_management.sale_quotation_template_tree"/>
+        <field name="arch" type="xml">
+            <field name="sale_by_sections" position="after">
+                <field name="template_project_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="project_sale_quotation_template_business_tree" model="ir.ui.view">
+        <field name="name">project.sale.quotation.template.business.tree</field>
+        <field name="model">sale.quotation.template.business</field>
+        <field name="inherit_id" ref="alq_sale_quotation_management.sale_quotation_template_business_tree"/>
+        <field name="arch" type="xml">
+            <field name="root_analytic_account_id" position="after">
+                <field name="surface_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="project_sale_quotation_template_line_tree" model="ir.ui.view">
+        <field name="name">project.sale.quotation.template.line.tree</field>
+        <field name="model">sale.quotation.template.line</field>
+        <field name="inherit_id" ref="alq_sale_quotation_management.sale_quotation_template_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="is_reference_line" position="after">
+                <field name="is_project_labor" optional="hide"/>
+                <field name="material_control" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

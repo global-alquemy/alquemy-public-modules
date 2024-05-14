@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="quotation_collection_order_form" model="ir.ui.view">
+        <field name="name">quotation.collection.order.form</field>
+        <field name="model">collection.order</field>
+        <field name="inherit_id" ref="alq_project_management.collection_order_form"/>
+        <field name="arch" type="xml">
+            <group name="construction_info" position="inside">
+                <field name="quotation_id" readonly="1"/>
+                <field name="business_line_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+            </group>
+        </field>
+    </record>
+
+    <menuitem id="collection_order_menu"
+              name="Collection orders"
+              action="alq_project_management.collection_order_action"
+              parent="sale.sale_order_menu"
+              sequence="99"/>
+
+</odoo>

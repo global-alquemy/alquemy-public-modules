@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="quotation_crm_lead_form" model="ir.ui.view">
+        <field name="name">quotation.crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <group name="opportunity_info" position="inside">
+                <field name="construction_id" required="1"/>
+                <field name="quotation_sequence" invisible="1"/>
+                <field name="next_version" invisible="1"/>
+                <field name="next_subsequence" invisible="1"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="quotation_crm_lead_search_opportunity" model="ir.ui.view">
+        <field name="name">quotation.crm.lead.search.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="construction_id"/>
+            </field>
+            <group position="inside">
+                <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="quotation_crm_lead_tree_opportunity" model="ir.ui.view">
+        <field name="name">quotation.crm.lead.tree.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="construction_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="quotation_crm_lead_oppor_inherited_crm" model="ir.ui.view">
+        <field name="name">quotation.crm.lead.oppor.inherited.crm</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <button name="action_view_sale_quotation" position="before">
+                <field name="quotation_ids" invisible="1"/>
+            </button>
+        </field>
+    </record>
+
+    <record id="quotation_crm_operating_unit_crm_lead_view_form" model="ir.ui.view">
+        <field name="name">quotation.crm.operating.unit.crm.lead.view.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm_operating_unit.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="operating_unit_id" position="before">
+                <field name="operating_unit_blocked" invisible="1"/>
+            </field>
+            <field name="operating_unit_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('operating_unit_blocked', '=', True)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="construction_construction_form" model="ir.ui.view">
+        <field name="name">construction.construction.form</field>
+        <field name="model">construction.construction</field>
+        <field name="arch" type="xml">
+            <form string="Construction">
+                <header></header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"></div>
+                    <div class="oe_title" name="title">
+                        <label for="name"/>
+                        <h1><field name="name" required="1"/></h1>
+                    </div>
+                    <group name="info">
+                        <group name="general_info">
+                            <field name="code"/>
+                        </group>
+                        <group name="address_info">
+                            <span class="o_form_label o_td_label" name="address_name">
+                                <b>Address</b>
+                            </span>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="zip_id" options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}" placeholder="Location completion" class="oe_edit_only"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options="{'no_open': True, 'no_create': True}" required="1"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="construction_construction_search" model="ir.ui.view">
+        <field name="name">construction.construction.search</field>
+        <field name="model">construction.construction</field>
+        <field name="arch" type="xml">
+            <search string="Constructions">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="street"/>
+                <field name="street2"/>
+                <field name="zip_id"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
+                <field name="country_id"/>
+                <group expand="0" string="Group by">
+                    <filter string="Zip" name="groupby_zip" domain="[]" context="{'group_by': 'zip_id'}"/>
+                    <filter string="State" name="groupby_state" domain="[]" context="{'group_by': 'state_id'}"/>
+                    <filter string="Country" name="groupby_country" domain="[]" context="{'group_by': 'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="construction_construction_tree" model="ir.ui.view">
+        <field name="name">construction.construction.tree</field>
+        <field name="model">construction.construction</field>
+        <field name="arch" type="xml">
+            <tree string="Constructions">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_construction_action" model="ir.actions.act_window">
+        <field name="name">Constructions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.construction</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="construction_construction_tree"/>
+        <field name="search_view_id" ref="construction_construction_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction.</p>
+        </field>
+    </record>
+
+    <record id="construction_team_form" model="ir.ui.view">
+        <field name="name">construction.team.form</field>
+        <field name="model">construction.team</field>
+        <field name="arch" type="xml">
+            <form string="Construction team">
+                <header></header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"></div>
+                    <div class="oe_title" name="title">
+                        <label for="name"/>
+                        <h1><field name="name" required="1"/></h1>
+                    </div>
+                    <group name="info">
+                        <group name="general_info">
+                            <field name="code"/>
+                        </group>
+                        <group name="address_info">
+                            <field name="chief_id" required="1"/>
+                            <field name="employee_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="construction_team_search" model="ir.ui.view">
+        <field name="name">construction.team.search</field>
+        <field name="model">construction.team</field>
+        <field name="arch" type="xml">
+            <search string="Construction teams">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="chief_id"/>
+                <field name="employee_ids"/>
+                <group expand="0" string="Group by">
+                    <filter string="Chief" name="groupby_chief" domain="[]" context="{'group_by': 'chief_id'}"/>
+                    <filter string="Employees" name="groupby_employees" domain="[]" context="{'group_by': 'employee_ids'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="construction_team_tree" model="ir.ui.view">
+        <field name="name">construction.team.tree</field>
+        <field name="model">construction.team</field>
+        <field name="arch" type="xml">
+            <tree string="Construction teams">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="chief_id"/>
+                <field name="employee_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_team_action" model="ir.actions.act_window">
+        <field name="name">Construction teams</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.team</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="construction_team_tree"/>
+        <field name="search_view_id" ref="construction_team_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction team.</p>
+        </field>
+    </record>
+
+</odoo>

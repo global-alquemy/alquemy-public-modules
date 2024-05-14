@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="certification_sale_advance_payment_inv_form" model="ir.ui.view">
+        <field name="name">certification.sale.advance.payment.inv.form</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='down_payment_details']" position="after">
+                <label for="inv_by_cert" string="" attrs="{'invisible': [('advance_payment_method', '!=', 'delivered')]}"/>
+                <div id="inv_by_cert_details" attrs="{'invisible': [('advance_payment_method', '!=', 'delivered')]}">
+                    <field name="inv_by_cert" nolabel="1"/>
+                    <label for="inv_by_cert"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

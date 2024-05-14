@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="quotation_generate_construction_worksheet_wizard_form" model="ir.ui.view">
+        <field name="name">quotation.generate.construction.worksheet.wizard.form</field>
+        <field name="model">generate.construction.worksheet.wizard</field>
+        <field name="inherit_id" ref="alq_project_management.generate_construction_worksheet_wizard_form"/>
+        <field name="arch" type="xml">
+            <group name="right_info" position="inside">
+                <field name="filtered_piecework_ids" invisible="1"/>
+                <field name="piecework_ids" domain="[('id', 'in', filtered_piecework_ids)]" widget="many2many_tags" attrs="{'invisible': [('auto_employee_lines', '=', False)]}"/>
+            </group>
+        </field>
+    </record>
+
+</odoo>

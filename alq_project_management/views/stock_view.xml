@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="construction_stock_location_form" model="ir.ui.view">
+        <field name="name">construction.stock.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <field name="usage" position="after">
+                <field name="is_construction"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="construction_stock_move_search" model="ir.ui.view">
+        <field name="name">construction.stock.move.search</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_search"/>
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="construction_id"/>
+            </field>
+            <group position="inside">
+                <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="construction_stock_move_tree" model="ir.ui.view">
+        <field name="name">construction.stock.move.tree</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="after">
+                <field name="construction_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="construction_stock_picking_form" model="ir.ui.view">
+        <field name="name">construction.stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <group name="other_infos" position="inside">
+                <field name="collection_id" readonly="1"/>
+                <field name="construction_id" readonly="1"/>
+                <field name="worksheet_id" readonly="1"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="construction_stock_picking_internal_search" model="ir.ui.view">
+        <field name="name">construction.stock.picking.internal.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="construction_id"/>
+            </field>
+            <filter name="starred" position="after">
+                <separator/>
+                <filter string="Pendings" name="pendings" domain="[('state', 'not in', ['cancel', 'done'])]"/>
+            </filter>
+            <group position="inside">
+                <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="construction_stock_picking_tree" model="ir.ui.view">
+        <field name="name">construction.stock.picking.tree</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="construction_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="construction_stock_warehouse_form" model="ir.ui.view">
+        <field name="name">construction.stock.warehouse.form</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="is_construction" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

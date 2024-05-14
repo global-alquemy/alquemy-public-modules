@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="quotation_project_project_form" model="ir.ui.view">
+        <field name="name">quotation.project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <group name="extra_settings" position="inside">
+                <field name="quotation_id" readonly="1"/>
+                <field name="business_line_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                <separator/>
+                <field name="labor_quotation_amount"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="quotation_construction_project_project_form" model="ir.ui.view">
+        <field name="name">quotation.construction.project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="alq_project_management.construction_project_project_form"/>
+        <field name="arch" type="xml">
+            <field name="construction_team_id" position="before">
+                <field name="surface_id" attrs="{'invisible': [('is_construction', '=', False)], 'required': [('is_construction', '=', True)]}"/>
+                <field name="filtered_piecework_ids" invisible="1"/>
+                <field name="default_piecework_ids" widget="many2many_tags" domain="[('id', 'in', filtered_piecework_ids)]" attrs="{'invisible': [('is_construction', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

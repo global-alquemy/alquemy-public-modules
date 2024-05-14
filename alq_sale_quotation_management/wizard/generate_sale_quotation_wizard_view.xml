@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="generate_sale_quotation_wizard_form" model="ir.ui.view">
+        <field name="name">generate.sale.quotation.wizard.form</field>
+        <field name="model">generate.sale.quotation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate sale quotation">
+                <group>
+                    <field name="operating_unit_id" required="1" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="business_line_id" required="1"/>
+                    <field name="template_id" required="1" options="{'no_open': True, 'no_create': True}" domain="[('business_line_ids', 'in', [business_line_id])]"/>
+                    <field name="partner_id" required="1" options="{'no_open': True, 'no_create': True}" domain="[('is_customer', '=', True)]"/>
+                    <field name="partner_shipping_id" required="1" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': True, 'show_vat': False}" options="{'always_reload': True, 'no_open': True, 'no_create': True}" domain="[('parent_id', '=', partner_id), ('type', '=', 'delivery')]"/>
+                    <field name="date" required="1"/>
+                    <field name="quotation_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="generate_sale_quotation" string="Generate sale quotation" type="object" class="oe_highlight"/>
+                    <span>or</span>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="generate_sale_quotation_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate sale quotation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">generate.sale.quotation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="generate_sale_quotation_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="generate_sale_quotation_wizard_menu"
+              name="Generate sale quotation"
+              action="generate_sale_quotation_wizard_action"
+              parent="sale.sale_order_menu"
+              sequence="100"/>
+
+</odoo>

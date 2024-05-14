@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="sqtf_header_days" model="sale.quotation.template.field">
+            <field name="code">header_days</field>
+            <field name="name">Cabecera: Días</field>
+        </record>
+
+        <record id="sqtf_header_efficiency" model="sale.quotation.template.field">
+            <field name="code">header_efficiency</field>
+            <field name="name">Cabecera: Rendimiento</field>
+        </record>
+
+        <record id="sqtf_header_length" model="sale.quotation.template.field">
+            <field name="code">header_length</field>
+            <field name="name">Cabecera: Longitud</field>
+        </record>
+
+        <record id="sqtf_header_perimeter" model="sale.quotation.template.field">
+            <field name="code">header_perimeter</field>
+            <field name="name">Cabecera: Perímetro</field>
+        </record>
+
+        <record id="sqtf_header_surface" model="sale.quotation.template.field">
+            <field name="code">header_surface</field>
+            <field name="name">Cabecera: Superficie</field>
+        </record>
+
+        <record id="sqtf_header_thickness" model="sale.quotation.template.field">
+            <field name="code">header_thickness</field>
+            <field name="name">Cabecera: Espesor</field>
+        </record>
+
+        <record id="sqtf_header_width" model="sale.quotation.template.field">
+            <field name="code">header_width</field>
+            <field name="name">Cabecera: Ancho</field>
+        </record>
+
+        <record id="sqtf_header_workers" model="sale.quotation.template.field">
+            <field name="code">header_workers</field>
+            <field name="name">Cabecera: Trabajadores</field>
+        </record>
+
+        <record id="sqtf_line_coefficient" model="sale.quotation.template.field">
+            <field name="code">line_coefficient</field>
+            <field name="name">Línea: Coeficiente</field>
+        </record>
+
+        <record id="sqtf_line_dosage" model="sale.quotation.template.field">
+            <field name="code">line_dosage</field>
+            <field name="name">Línea: Dosificación</field>
+        </record>
+
+        <record id="sqtf_line_efficiency" model="sale.quotation.template.field">
+            <field name="code">line_efficiency</field>
+            <field name="name">Línea: Rendimiento</field>
+        </record>
+
+        <record id="sqtf_line_height" model="sale.quotation.template.field">
+            <field name="code">line_height</field>
+            <field name="name">Línea: Altura</field>
+        </record>
+
+        <record id="sqtf_line_length" model="sale.quotation.template.field">
+            <field name="code">line_length</field>
+            <field name="name">Línea: Longitud</field>
+        </record>
+
+        <record id="sqtf_line_surface" model="sale.quotation.template.field">
+            <field name="code">line_surface</field>
+            <field name="name">Línea: Superficie</field>
+        </record>
+
+        <record id="sqtf_line_thickness" model="sale.quotation.template.field">
+            <field name="code">line_thickness</field>
+            <field name="name">Línea: Espesor</field>
+        </record>
+
+        <record id="sqtf_line_units" model="sale.quotation.template.field">
+            <field name="code">line_units</field>
+            <field name="name">Línea: Unidades</field>
+        </record>
+
+        <record id="sqtf_line_usage" model="sale.quotation.template.field">
+            <field name="code">line_usage</field>
+            <field name="name">Línea: Consumo</field>
+        </record>
+
+        <record id="sqtf_line_width" model="sale.quotation.template.field">
+            <field name="code">line_width</field>
+            <field name="name">Línea: Anchura</field>
+        </record>
+
+    </data>
+</odoo>

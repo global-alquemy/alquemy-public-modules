@@ -1,0 +1,124 @@
+/* 2024 Alquemy - Carlos Sánchez Cifuentes <csanchez@alquemy.es>
+   2024 Alquemy - José Antonio Fernández Valls <jafernandez@alquemy.es>
+   License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). */
+
+.quotation-form {
+    .o_form_statusbar {
+        z-index: 10 !important;
+        .status_cancel {
+            .btn-primary {
+                background-color: #000000 !important;
+                border-left-color: #000000 !important;
+                color:#DDDDDD !important;
+                font-weight: bold !important;
+            }
+        }
+        .status_confirmed {
+            .btn-primary {
+                background-color: #dc3545 !important;
+                border-left-color: #dc3545 !important;
+                color:#000000 !important;
+                font-weight: bold !important;
+            }
+        }
+        .status_done {
+            .btn-primary {
+                background-color: #28a745 !important;
+                border-left-color: #28a745 !important;
+                color:#000000 !important;
+                font-weight: bold !important;
+            }
+        }
+        .status_draft {
+            .o_arrow_button.btn-primary.disabled {
+                background-color: #d3d3d3 !important;
+                color:#000000 !important;
+                font-weight: bold !important;
+            }
+            .o_arrow_button.btn-primary.disabled:after {
+                border-left-color: #d3d3d3 !important;
+            }
+            .o_arrow_button.btn-primary.disabled:before {
+                border-left-color: #d3d3d3 !important;
+            }
+        }
+        .status_quotation {
+            .o_arrow_button.btn-primary.disabled {
+                background-color: #ffac00 !important;
+                color:#000000 !important;
+                font-weight: bold !important;
+            }
+            .o_arrow_button.btn-primary.disabled:after {
+                border-left-color: #ffac00 !important;
+            }
+            .o_arrow_button.btn-primary.disabled:before {
+                border-left-color: #ffac00 !important;
+            }
+        }
+        .status_sent {
+            .o_arrow_button.btn-primary.disabled {
+                background-color: #17a2b8 !important;
+                color:#000000 !important;
+                font-weight: bold !important;
+            }
+            .o_arrow_button.btn-primary.disabled:after {
+                border-left-color: #17a2b8 !important;
+            }
+            .o_arrow_button.btn-primary.disabled:before {
+                border-left-color: #17a2b8 !important;
+            }
+        }
+    }
+    .quotation-lines {
+        .font-weight-bold {
+            background-color: #DDDDDD !important;
+        }
+        .table-responsive{
+            overflow: visible !important;
+        }
+        thead {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            position: sticky !important;
+            top: 35px !important;
+            z-index: 5 !important;
+        }
+        thead>tr>th:hover {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+    }
+}
+
+.quotation-tree {
+    .bg-danger-light {
+        background-color: #dc3545 !important;
+        color:#000000 !important;
+        font-weight: bold !important;
+    }
+    .bg-info-light {
+        background-color: #17a2b8 !important;
+        color:#000000 !important;
+        font-weight: bold !important;
+    }
+    .bg-muted-light {
+        background-color: #d3d3d3 !important;
+        color:#000000 !important;
+        font-weight: bold !important;
+    }
+    .bg-primary-light {
+        background-color: #000000 !important;
+        color:#DDDDDD !important;
+        font-weight: bold !important;
+    }
+    .bg-success-light {
+        background-color: #28a745 !important;
+        color:#000000 !important;
+        font-weight: bold !important;
+    }
+    .bg-warning-light {
+        background-color: #ffac00 !important;
+        color:#000000 !important;
+        font-weight: bold !important;
+    }
+}

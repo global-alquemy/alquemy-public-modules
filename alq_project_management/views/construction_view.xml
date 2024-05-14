@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="construction_worksheet_form" model="ir.ui.view">
+        <field name="name">construction.worksheet.form</field>
+        <field name="model">construction.worksheet</field>
+        <field name="arch" type="xml">
+            <form string="Construction worksheet" create="0">
+                <header>
+                    <button name="action_done" type="object" confirm="Are you sure you want to confirm the construction worksheet?" string="Confirm" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done" readonly="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="picking_ids" invisible="1"/>
+                        <button name="button_view_pickings" type="object" class="oe_stat_button" icon="fa-truck" attrs="{'invisible': [('picking_ids', '=', [])]}">
+                            <field name="pickings_count" widget="statinfo" string="Pickings"/>
+                        </button>
+                    </div>
+                    <div class="oe_title" name="title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group name="info">
+                        <group name="general_info">
+                            <field name="date" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="user_id" attrs="{'readonly': [('state', '=', 'done')]}" options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                        <group name="other_info">
+                            <field name="company_id" invisible="1"/>
+                            <field name="operating_unit_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="construction_id" readonly="1"/>
+                            <field name="construction_warehouse_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="construction_location_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="project_id" readonly="1"/>
+                            <field name="analytic_account_id" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="collection_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group name="internal_notes">
+                        <field name="internal_notes" nolabel="1" placeholder="Internal notes..." attrs="{'readonly': [('state', '=', 'done')]}"/>
+                    </group>
+                    <notebook>
+                        <page name="page_lines" string="Lines">
+                            <group name="lines_info">
+                                <group name="lines_general_info">
+                                    <field name="allowance_id" domain="[('is_allowance', '=', True)]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="hours" widget="float_time" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                                    <field name="toxics"/>
+                                </group>
+                                <group name="lines_other_info"></group>
+                            </group>
+                            <field name="line_ids" context="{'default_worksheet_id': active_id}" attrs="{'readonly': [('state', '=', 'done')]}">
+                                <tree editable="bottom" limit="1000">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="employee_id" required="1" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="name" required="1" optional="hide"/>
+                                    <field name="allowance_id" optional="show" domain="[('is_allowance', '=', True)]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="allowance_qty" invisible="1"/>
+                                    <field name="toxics" optional="show"/>
+                                    <field name="toxics_qty" invisible="1"/>
+                                    <field name="force_hours" string="Hours" widget="float_time"/>
+                                    <field name="start_date" invisible="1"/>
+                                    <field name="end_date" invisible="1"/>
+                                    <field name="hours" invisible="1" widget="float_time"/>
+                                    <field name="worksheet_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="page_materials" string="Materials">
+                            <field name="material_ids" context="{'default_worksheet_id': active_id}" attrs="{'readonly': [('state', '=', 'done')]}">
+                                <tree editable="bottom" limit="1000">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_collection_ids" invisible="1"/>
+                                    <field name="product_id" required="1" domain="[('id', 'in', product_collection_ids)]" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="name" required="1" optional="hide"/>
+                                    <field name="product_uom_id" readonly="1" force_save="1" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="product_uom_qty" required="1"/>
+                                    <field name="worksheet_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="construction_worksheet_search" model="ir.ui.view">
+        <field name="name">construction.worksheet.search</field>
+        <field name="model">construction.worksheet</field>
+        <field name="arch" type="xml">
+            <search string="Construction worksheets">
+                <field name="name"/>
+                <field name="operating_unit_id"/>
+                <field name="construction_id"/>
+                <field name="project_id"/>
+                <field name="collection_id"/>
+                <field name="company_id" invisible="1"/>
+                <field name="user_id"/>
+                <field name="state"/>
+                <separator/>
+                <filter string="My worksheets" name="filter_my_worksheets" domain="[('user_id', 'in', [uid, False])]"/>
+                <separator/>
+                <filter string="Date" name="filter_date" date="date"/>
+                <separator/>
+                <filter string="Draft" name="filter_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Done" name="filter_done" domain="[('state', '=', 'done')]"/>
+                <group expand="0" string="Group by">
+                    <filter string="Operating unit" name="groupby_operating_unit" domain="[]" context="{'group_by': 'operating_unit_id'}"/>
+                    <filter string="Construction" name="groupby_construction" domain="[]" context="{'group_by': 'construction_id'}"/>
+                    <filter string="Project" name="groupby_project" domain="[]" context="{'group_by': 'project_id'}"/>
+                    <filter string="Collection" name="groupby_collection" domain="[]" context="{'group_by': 'collection_id'}"/>
+                    <filter string="Company" name="groupby_company" domain="[]" context="{'group_by': 'company_id'}" invisible="1"/>
+                    <filter string="User" name="groupby_user" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter string="State" name="groupby_state" domain="[]" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="construction_worksheet_tree" model="ir.ui.view">
+        <field name="name">construction.worksheet.tree</field>
+        <field name="model">construction.worksheet</field>
+        <field name="arch" type="xml">
+            <tree string="Construction worksheets" create="0">
+                <field name="name"/>
+                <field name="date" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="company_id" invisible="1"/>
+                <field name="operating_unit_id" optional="hide"/>
+                <field name="construction_id" optional="hide"/>
+                <field name="construction_warehouse_id" optional="hide"/>
+                <field name="construction_location_id" optional="hide"/>
+                <field name="project_id" optional="hide"/>
+                <field name="analytic_account_id" optional="hide"/>
+                <field name="collection_id" optional="hide"/>
+                <field name="internal_notes" invisible="1"/>
+                <field name="hours" invisible="1"/>
+                <field name="line_ids" invisible="1"/>
+                <field name="material_ids" invisible="1"/>
+                <field name="state" widget="badge" decoration-muted="state == 'draft'" decoration-success="state == 'done'" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_worksheet_action" model="ir.actions.act_window">
+        <field name="name">Construction worksheets</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.worksheet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="construction_worksheet_tree"/>
+        <field name="search_view_id" ref="construction_worksheet_search"/>
+        <field name="context">{'search_default_filter_my_worksheets': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction worksheet.</p>
+        </field>
+    </record>
+
+    <menuitem id="construction_worksheet_menu"
+              name="Construction worksheets"
+              action="construction_worksheet_action"
+              parent="base_construction_menu"
+              sequence="30"/>
+
+</odoo>

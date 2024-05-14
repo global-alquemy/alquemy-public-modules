@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="construction_worksheet_form" model="ir.ui.view">
+        <field name="name">construction.worksheet.form</field>
+        <field name="model">construction.worksheet</field>
+        <field name="inherit_id" ref="alq_project_management.construction_worksheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='force_hours']" position="attributes">
+                <attribute name="string">Total hours</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='hours']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='hours']" position="after">
+                <field name="extra_hours" widget="float_time"/>
+            </xpath>
+            <notebook position="inside">
+                <page name="page_pieceworks" string="Pieceworks">
+                    <field name="piecework_ids" context="{'default_worksheet_id': active_id}" attrs="{'readonly': [('state', '=', 'done')]}">
+                        <tree editable="bottom" limit="1000">
+                            <field name="sequence" widget="handle"/>
+                            <field name="employee_id" required="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="piecework_ids" invisible="1"/>
+                            <field name="piecework_id" required="1" domain="[('id', 'in', piecework_ids)]" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="uom_qty" required="1"/>
+                            <field name="uom_id" readonly="1" force_save="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="worksheet_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="construction_piecework_search" model="ir.ui.view">
+        <field name="name">construction.piecework.search</field>
+        <field name="model">construction.piecework</field>
+        <field name="arch" type="xml">
+            <search string="Construction pieceworks">
+                <field name="name"/>
+                <field name="business_line_id"/>
+                <field name="job_id"/>
+                <field name="surface_id"/>
+                <field name="uom_id"/>
+                <field name="company_id" invisible="1"/>
+                <separator/>
+                <filter string="Start date" name="filter_start_date" date="start_date"/>
+                <filter string="End date" name="filter_end_date" date="end_date"/>
+                <group expand="0" string="Group by">
+                    <filter string="Name" name="groupby_name" domain="[]" context="{'group_by': 'name'}"/>
+                    <filter string="Business line" name="groupby_business_line" domain="[]" context="{'group_by': 'business_line_id'}"/>
+                    <filter string="Job" name="groupby_job" domain="[]" context="{'group_by': 'job_id'}"/>
+                    <filter string="Surface" name="groupby_surface" domain="[]" context="{'group_by': 'surface_id'}"/>
+                    <filter string="UoM" name="groupby_uom" domain="[]" context="{'group_by': 'uom_id'}"/>
+                    <filter string="Company" name="groupby_company" domain="[]" context="{'group_by': 'company_id'}" invisible="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="construction_piecework_tree" model="ir.ui.view">
+        <field name="name">construction.piecework.tree</field>
+        <field name="model">construction.piecework</field>
+        <field name="arch" type="xml">
+            <tree string="Construction pieceworks" editable="bottom">
+                <header>
+                    <button type="object" name="duplicate_pieceworks" string="Duplicate"/>
+                </header>
+                <field name="company_id" optional="hide"/>
+                <field name="name" required="1"/>
+                <field name="business_line_id" required="1"/>
+                <field name="operating_unit_ids" required="1" widget="many2many_tags"/>
+                <field name="job_id" required="1"/>
+                <field name="surface_id" required="1"/>
+                <field name="settlement_type" required="1"/>
+                <field name="start_date" optional="show"/>
+                <field name="end_date" optional="show"/>
+                <field name="min_uom_qty" required="1"/>
+                <field name="uom_id" required="1"/>
+                <field name="amount" string="Amount (€)" required="1"/>
+                <field name="min_amount" string="Min. amount (€)" required="1"/>
+                <field name="display_name" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_piecework_action" model="ir.actions.act_window">
+        <field name="name">Construction pieceworks</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.piecework</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="construction_piecework_tree"/>
+        <field name="search_view_id" ref="construction_piecework_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction piecework.</p>
+        </field>
+    </record>
+
+    <menuitem id="construction_piecework_menu"
+              name="Construction pieceworks"
+              action="construction_piecework_action"
+              parent="alq_project_management.base_construction_menu"
+              sequence="70"/>
+
+    <record id="construction_hour_search" model="ir.ui.view">
+        <field name="name">construction.hour.search</field>
+        <field name="model">construction.hour</field>
+        <field name="arch" type="xml">
+            <search string="Construction hours">
+                <field name="name"/>
+                <field name="company_id" invisible="1"/>
+                <separator/>
+                <filter string="Start date" name="filter_start_date" date="start_date"/>
+                <filter string="End date" name="filter_end_date" date="end_date"/>
+                <group expand="0" string="Group by">
+                    <filter string="Name" name="groupby_name" domain="[]" context="{'group_by': 'name'}"/>
+                    <filter string="Business lines" name="groupby_business_lines" domain="[]" context="{'group_by': 'business_line_ids'}"/>
+                    <filter string="Operating units" name="groupby_operating_units" domain="[]" context="{'group_by': 'operating_unit_ids'}"/>
+                    <filter string="Company" name="groupby_company" domain="[]" context="{'group_by': 'company_id'}" invisible="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="construction_hour_tree" model="ir.ui.view">
+        <field name="name">construction.hour.tree</field>
+        <field name="model">construction.hour</field>
+        <field name="arch" type="xml">
+            <tree string="Construction hours" editable="bottom">
+                <header>
+                    <button type="object" name="duplicate_hours" string="Duplicate"/>
+                </header>
+                <field name="company_id" optional="hide"/>
+                <field name="name" required="1"/>
+                <field name="business_line_ids" widget="many2many_tags" required="1"/>
+                <field name="operating_unit_ids" widget="many2many_tags" required="1"/>
+                <field name="regular_hours" widget="float_time" required="1"/>
+                <field name="start_date" optional="show"/>
+                <field name="end_date" optional="show"/>
+                <field name="display_name" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_hour_action" model="ir.actions.act_window">
+        <field name="name">Construction hours</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.hour</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="construction_hour_tree"/>
+        <field name="search_view_id" ref="construction_hour_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction hour.</p>
+        </field>
+    </record>
+
+    <menuitem id="construction_hour_menu"
+              name="Construction hours"
+              action="construction_hour_action"
+              parent="alq_project_management.base_construction_menu"
+              sequence="50"/>
+
+    <record id="construction_surface_tree" model="ir.ui.view">
+        <field name="name">construction.surface.tree</field>
+        <field name="model">construction.surface</field>
+        <field name="arch" type="xml">
+            <tree string="Construction surfaces" editable="bottom">
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="construction_surface_action" model="ir.actions.act_window">
+        <field name="name">Construction surfaces</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">construction.surface</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="construction_surface_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new construction surface.</p>
+        </field>
+    </record>
+
+    <menuitem id="construction_surface_menu"
+              name="Construction surfaces"
+              action="construction_surface_action"
+              parent="alq_project_management.base_construction_menu"
+              sequence="90"/>
+
+</odoo>
